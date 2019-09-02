@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_143130) do
+ActiveRecord::Schema.define(version: 2019_09_02_145609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alerts", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "area_id"
+    t.bigint "institution_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_alerts_on_area_id"
+    t.index ["institution_id"], name: "index_alerts_on_institution_id"
+    t.index ["user_id"], name: "index_alerts_on_user_id"
+  end
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
@@ -67,6 +80,9 @@ ActiveRecord::Schema.define(version: 2019_09_02_143130) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "alerts", "areas"
+  add_foreign_key "alerts", "institutions"
+  add_foreign_key "alerts", "users"
   add_foreign_key "favorites", "scholarships"
   add_foreign_key "favorites", "users"
   add_foreign_key "institutions", "users"
