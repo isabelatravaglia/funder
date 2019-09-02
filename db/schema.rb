@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_130307) do
+ActiveRecord::Schema.define(version: 2019_09_02_143130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2019_09_02_130307) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "scholarship_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scholarship_id"], name: "index_favorites_on_scholarship_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "institutions", force: :cascade do |t|
@@ -30,6 +39,20 @@ ActiveRecord::Schema.define(version: 2019_09_02_130307) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_institutions_on_user_id"
+  end
+
+  create_table "scholarships", force: :cascade do |t|
+    t.string "name"
+    t.bigint "area_id"
+    t.text "description"
+    t.date "application_start_date"
+    t.date "application_end_date"
+    t.bigint "institution_id"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_scholarships_on_area_id"
+    t.index ["institution_id"], name: "index_scholarships_on_institution_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,5 +67,9 @@ ActiveRecord::Schema.define(version: 2019_09_02_130307) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "scholarships"
+  add_foreign_key "favorites", "users"
   add_foreign_key "institutions", "users"
+  add_foreign_key "scholarships", "areas"
+  add_foreign_key "scholarships", "institutions"
 end
