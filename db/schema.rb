@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_130307) do
+ActiveRecord::Schema.define(version: 2019_09_02_131442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,20 @@ ActiveRecord::Schema.define(version: 2019_09_02_130307) do
     t.index ["user_id"], name: "index_institutions_on_user_id"
   end
 
+  create_table "scholarships", force: :cascade do |t|
+    t.string "name"
+    t.bigint "area_id"
+    t.text "description"
+    t.date "application_start_date"
+    t.date "application_end_date"
+    t.bigint "institution_id"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_scholarships_on_area_id"
+    t.index ["institution_id"], name: "index_scholarships_on_institution_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -45,4 +59,6 @@ ActiveRecord::Schema.define(version: 2019_09_02_130307) do
   end
 
   add_foreign_key "institutions", "users"
+  add_foreign_key "scholarships", "areas"
+  add_foreign_key "scholarships", "institutions"
 end
