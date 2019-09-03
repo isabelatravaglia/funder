@@ -4,11 +4,15 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new
-    @favorite.user = current_user
-    @favorite.scholarship = Scholarship.find(params[:scholarship_id])
-    @favorite.save
-    redirect_to scholarships_path
+    if !current_user.profile_incomplete?
+      @favorite = Favorite.new
+      @favorite.user = current_user
+      @favorite.scholarship = Scholarship.find(params[:scholarship_id])
+      @favorite.save
+      redirect_to scholarships_path
+    else
+      redirect_to edit_user_registration_path, notice: "Please fill in your profile to save a scholarship to your favorites!"
+    end
   end
 
   def destroy
