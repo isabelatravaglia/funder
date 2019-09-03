@@ -5,7 +5,6 @@ class InstitutionsController < ApplicationController
 
   def index
     @institutions = Institution.all
-
   end
 
   def new
@@ -15,10 +14,8 @@ class InstitutionsController < ApplicationController
   def create
     @institution = Institution.new(institution_params)
     @institution.user = current_user
-    if @institution.save
-      redirect_to institutions_path
-
-    end
+    @institution.save
+    redirect_to institutions_path
   end
 
   def edit
@@ -45,5 +42,3 @@ class InstitutionsController < ApplicationController
     params.require(:institution).permit(:name, :city, :country, :ranking, :photo)
   end
 end
-
-
