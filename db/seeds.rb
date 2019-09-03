@@ -10,7 +10,11 @@ TYPES = ["Research of ", "PHd of "]
 
 puts "Creating user admin"
 url_admin = "https://res.cloudinary.com/veronicabraga/image/upload/v1567519066/institutions/User%20avatar/photo-1507003211169-0a1dd7228f2d_a5w1nr.jpg"
-admin = User.create(email: "admin@funder.com", first_name: "Admin", last_name: "Admin", photo: url_admin, role: "admin", degree: "admin", nationality: "admin", area: "admin", date_of_birth: Date.new(2019,1,1), gender: "female", country: "Portugual", password: "123456")
+admin = User.new(email: "admin@funder.com", first_name: "Admin", last_name: "Admin", role: "admin", degree: "admin", nationality: "admin", area: "admin", date_of_birth: Date.new(2019,1,1), gender: "female", country: "Portugual", password: "123456")
+admin.remote_photo_url = url_admin
+admin.save
+
+
 
 puts "Creating institutions"
 
