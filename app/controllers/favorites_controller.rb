@@ -6,6 +6,15 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new
     @favorite.user = current_user
-    @favorite.scholarship = params(:scholarship_id)
+    @favorite.scholarship = Scholarship.find(params[:scholarship_id])
+    @favorite.save
+    redirect_to scholarships_path
+  end
+
+  def destroy
+    # @favorite = Favorite.where(user: current_user, scholarship: params[:scholarship_id]).first
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    redirect_to scholarships_path
   end
 end
