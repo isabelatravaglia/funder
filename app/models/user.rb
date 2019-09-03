@@ -13,4 +13,5 @@ class User < ApplicationRecord
   validates :nationality, presence: true
   validates :area, presence: true
   validates :country, presence: true
+  mount_uploader :photo, PhotoUploader
 end
