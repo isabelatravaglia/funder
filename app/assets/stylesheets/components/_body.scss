@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+body {
+  background-color: #E5E2E2;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.homepage-content {
+  min-height: calc(100vh - 76px);
+
+}
+
+
+.site-content {
+  margin-top: 150px;
+  min-height:calc(100vh - 60px);
+  font-family: 'Roboto', sans-serif;
+
+  h2{
+    color: #4d4d4d
+  }
+  p {
+    color: #4d4d4d
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.form-inputs {
+
+  font-family: 'Roboto', sans-serif;
+  color: #4d4d4d;
+
+}
+
+.row {
+
+  margin: 0 8%;
+}
+
