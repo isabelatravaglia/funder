@@ -1,0 +1,51 @@
+
+
+<!-- <div class="profile">
+  <h3>USER PROFILE</h3>
+
+  <ul>
+    <li>Full Name: <%=@user.first_name%> <%=@user.last_name%> </li>
+    <li> Your area of study: <%=@user.area%></li>
+    <li> Nationality: <%=@user.nationality%></li>
+    <li> Your actual country: <%=@user.country%></li>
+    <li> Date of birth: <%=@user.date_of_birth%></li>
+    <li> Gender: <%=@user.gender%></li>
+  </ul>
+
+</div>
+ -->
+
+<div class="row equal d-flex justify-content-center">
+
+  <div class="col-xs-6 col-sm-3">
+    <div class="favorites border border-dark">
+    <h2>My Favorite</h2>
+    </div>
+  </div>
+
+    <div class="col-xs-6 col-sm-3">
+      <div class="alerts border border-dark">
+      <h2>My Alert</h2>
+      </div>
+    </div>
+
+  <div class="col-xs-6 col-sm-3 container3">
+    <div class="profile border border-dark">
+      <div class="profile"><h2>My Profile</h2>
+        <ul>
+          <li>Full Name: <%=@user.first_name%> <%=@user.last_name%> </li>
+          <li> Your area of study: <%=@user.area%></li>
+          <li> Nationality: <%=@user.nationality%></li>
+          <li> Country: <%=@user.country%></li>
+          <li> Date of birth: <%=@user.date_of_birth%></li>
+          <li> Gender: <%=@user.gender%></li>
+        </ul>
+      </div>
+    </div>
+    <div class="icon">
+      <%= link_to edit_user_registration_path do %>
+      <i class="fas fa-pencil-alt"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

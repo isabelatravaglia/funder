@@ -1,0 +1,12 @@
+<h3>USER PROFILE</h3>
+
+<%@users.each do |user|%>
+<ul>
+  <li> <%=user.first_name%></li>
+  <li> <%=user.last_name%></li>
+  <li> <%=user.area%></li>
+  <li> <%=user.nationality%></li>
+  <li> <%=user.country%></li>
+</ul>
+
+<% end %>

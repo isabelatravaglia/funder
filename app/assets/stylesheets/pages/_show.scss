@@ -1,0 +1,19 @@
+.container3 {
+position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  padding-right: 14px;
+  color: red;
+}
+
+.icon a {
+color: #747474;
+text-decoration: none;
+&:hover {
+  opacity: 0.5;
+  }
+}
