@@ -1,0 +1,13 @@
+<h2> Scholarships </h2>
+
+<% @scholarships.each do |scholarship|%>
+<div class="card-product">
+  <img src= "<%= scholarship.institution.photo %>" />
+  <div class="card-product-infos">
+    <h2><%= scholarship.name %></h2>
+    <h2><%= scholarship.institution.name %></h2>
+    <p><%= scholarship.description %></p>
+  </div>
+</div>
+<br>
+<% end %>
