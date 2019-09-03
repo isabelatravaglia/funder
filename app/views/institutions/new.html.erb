@@ -1,0 +1,12 @@
+<h1>Institutions#new</h1>
+
+<%= simple_form_for @institution  do |f| %>
+  <%= f.input :name %>
+  <%= f.input :city %>
+  <%= f.input :country %>
+  <%= f.input :ranking %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, "Create", class: 'btn btn-dark rounded-pill' %>
+<% end %>
+

@@ -6,4 +6,5 @@ class Institution < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
   validates :ranking, presence: true
+  mount_uploader :photo, PhotoUploader
 end
