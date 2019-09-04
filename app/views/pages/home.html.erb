@@ -1,12 +1,14 @@
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567592368/banner_image/450357941_f9b8c99588_o_zkqw8g.jpg);">
 
-  <div class="container">
-    <div class="tag-line">
+
+  <div class="row">
+    <div class="tag-line col-12 text-center">
       <h1>Your funding finder</h1>
       <h3>Find a scholarship to support your PhD studies in Europe</h3>
     </div>
 
-    <div class="position-search">
+    <div class="position-search col-12">
       <div class="home-search-form  form-inline">
         <%= form_tag scholarships_path, method: :get do %>
           <%= text_field_tag :query,
@@ -14,7 +16,7 @@
             class: "form-control",
             placeholder: "Find a scholarship"
           %>
-          <%= submit_tag "Search", class: "btn btn-warning" %>
+          <%= submit_tag "Search", class: "btn btn-warning home-search-btn" %>
         <% end %>
       </div>
     </div>
@@ -22,7 +24,7 @@
 </div>
 
 <%= render 'shared/search_results' %>
-<div class="downArrow bounce">
+<div class="downArrow bounce sm-12 md-6 lg-4">
   <img width="50px" height="50px" alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4=" />
 
 </div>

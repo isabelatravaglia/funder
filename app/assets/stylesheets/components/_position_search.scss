@@ -5,14 +5,40 @@
 }
 
 .home-search-form {
-  form{
-    width:100%;
+  width: 50%;
+  margin-left: 25%;
+
+  form {
+    width: 100%;
   }
 
-    width: 50%;
-    margin-left: 25%;
   #query {
-    width: 85%;
+    width: 75%;
+  }
+
+  .home-search-btn {
+    width: 23%;
+  }
+
+}
+
+@media all and (max-width: 690px) {
+  .home-search-form {
+    width: 100%;
+    margin-left: 0%;
+
+    form {
+      width: 100%;
+    }
+
+    #query {
+      width: 100%;
+    }
+
+    .home-search-btn {
+      width: 100%;
+      margin-top: 10px;
+    }
   }
 
 }
