@@ -28,61 +28,18 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-4">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567531878/areas_photos/asli-yilmaz-u1PX1Q26Kpo-unsplash_ftfous.jpg)">
-      Geography
-    </div>
-  </div>
 
-  <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532089/areas_photos/daniel-h-tong-xBeid9r1paU-unsplash_j6odbw.jpg)">
-        History
+  <% @areas.each do |area|  %>
+
+    <div class="col-sm-12 col-md-6 col-lg-4 filter">
+      <%= link_to scholarships_path({query: area}) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path area.photo %>')">
+        <%= area.name %>
       </div>
+
+      <% end %>
     </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532146/areas_photos/sai-kiran-anagani-5Ntkpxqt54Y-unsplash_dmsobv.jpg)">
-        Computer Science
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567533775/areas_photos/psychology_rlrzto.png)">
-        Psychology
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532966/areas_photos/m-b-m-ZzOa5G8hSPI-unsplash_vfswmm.jpg)">
-        Economics
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567533065/areas_photos/alexandre-debieve-FO7JIlwjOtU-unsplash_u6mqdj.jpg)">
-        ICT
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532989/areas_photos/mario-purisic-jG1z5o7NCq4-unsplash_mlpjpa.jpg)">
-        Anthropology
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532956/areas_photos/glenn-carstens-peters-npxXWgQ33ZQ-unsplash_a2uiii.jpg)">
-        Communication
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567533041/areas_photos/adeolu-eletu-unRkg2jH1j0-unsplash_ov9k7j.jpg)">
-        Management
-      </div>
-    </div>
-
-
+  <% end %>
   </div>
 
   </div>
