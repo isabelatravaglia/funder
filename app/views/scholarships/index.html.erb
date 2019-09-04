@@ -6,19 +6,11 @@
     <div class="card-product">
       <%= image_tag scholarship.institution.photo_url %>
         <div class="card-product-infos">
-          <% if not favorite?(scholarship) %>
-            <%= link_to scholarship_favorites_path(scholarship), method: :post do %>
-              <i class="fas fa-heart" style = "color: pink;"></i>
-            <% end %>
-          <% else %>
-            <%= link_to scholarship_favorite_path(scholarship, current_user.favorites.find_by(scholarship: scholarship)), method: :delete do %>
-              <i class="fas fa-heart" style = "color: black;"></i>
-            <% end %>
-          <% end %>
-            <h2><%= scholarship.name %></h2>
-            <h2><%= scholarship.institution.name %></h2>
-            <p><%= scholarship.description %></p>
-          </div>
+          <%= icon(current_user.likes?(scholarship) ? "fas color-fas" : "far color-far" , "heart") %>
+          <h2><%= scholarship.name %></h2>
+          <h2><%= scholarship.institution.name %></h2>
+          <p><%= scholarship.description %></p>
+        </div>
       </div>
     <% end %>
   <% end %>
@@ -29,9 +21,7 @@
     <div class="card-product">
       <%= image_tag scholarship.institution.photo_url %>
       <div class="card-product-infos">
-        <%= link_to scholarship_favorites_path(scholarship), method: :post do %>
-          <i class="fas fa-heart" style = "color: pink;"></i>
-        <% end %>
+         <%= icon(current_user.likes?(scholarship) ? "fas color-fas " : "far color-far" , "heart") %>
         <h2><%= scholarship.name %></h2>
         <h2><%= scholarship.institution.name %></h2>
         <p><%= scholarship.description %></p>
