@@ -1,0 +1,15 @@
+
+<% if not @results.nil? %>
+  <% @results.each do |result|  %>
+    <%= link_to scholarship_path(result), method: :get, :action => 'go' do %>
+      <div class="card-product">
+        <img src= "<%= result.institution.photo %>" />
+        <div class="card-product-infos">
+          <h2><%=result.name%></h2>
+          <p><%=result.institution%></p>
+          <p><%=result.description%></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
