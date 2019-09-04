@@ -1,0 +1,11 @@
+
+<div class="search-form  form-inline">
+  <%= form_tag scholarships_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a scholarship"
+    %>
+    <%= submit_tag "Search", class: "btn btn-warning" %>
+  <% end %>
+</div>
