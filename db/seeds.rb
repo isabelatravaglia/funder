@@ -72,19 +72,52 @@ inst_10.save
 
 
 puts "Creating areas"
-Area.create(name: "Geography")
-Area.create(name: "Anthropology")
-Area.create(name: "History")
-Area.create(name: "ICT")
-Area.create(name: "Philosophy")
-Area.create(name: "Management")
-Area.create(name: "Economics")
-Area.create(name: "Computer Science")
-Area.create(name: "Psychology")
-Area.create(name: "Sociology")
-Area.create(name: "Agriculture")
-Area.create(name: "Architecture and design")
-Area.create(name: "Business")
+
+url_1 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567531878/areas_photos/asli-yilmaz-u1PX1Q26Kpo-unsplash_ftfous.jpg"
+area_1 = Area.create(name: "Geography")
+area_1.remote_photo_url = url_1
+area_1.save
+
+url_2 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532989/areas_photos/mario-purisic-jG1z5o7NCq4-unsplash_mlpjpa.jpg"
+area_2 = Area.create(name: "Anthropology")
+area_2.remote_photo_url = url_2
+area_2.save
+
+url_3 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532089/areas_photos/daniel-h-tong-xBeid9r1paU-unsplash_j6odbw.jpg"
+area_3 = Area.create(name: "History")
+area_3.remote_photo_url = url_3
+area_3.save
+
+url_4 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567533065/areas_photos/alexandre-debieve-FO7JIlwjOtU-unsplash_u6mqdj.jpg"
+area_4 = Area.create(name: "ICT")
+area_4.remote_photo_url = url_4
+area_4.save
+
+url_5 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567533775/areas_photos/psychology_rlrzto.png"
+area_5 = Area.create(name: "Psychology")
+area_5.remote_photo_url = url_5
+area_5.save
+
+url_6 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567533041/areas_photos/adeolu-eletu-unRkg2jH1j0-unsplash_ov9k7j.jpg"
+area_6 = Area.create(name: "Management")
+area_6.remote_photo_url = url_6
+area_6.save
+
+url_7 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532966/areas_photos/m-b-m-ZzOa5G8hSPI-unsplash_vfswmm.jpg"
+area_7 = Area.create(name: "Economics")
+area_7.remote_photo_url = url_7
+area_7.save
+
+url_8 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532146/areas_photos/sai-kiran-anagani-5Ntkpxqt54Y-unsplash_dmsobv.jpg"
+area_8 = Area.create(name: "Computer Science")
+area_8.remote_photo_url = url_8
+area_8.save
+
+url_9 = "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567532956/areas_photos/glenn-carstens-peters-npxXWgQ33ZQ-unsplash_a2uiii.jpg"
+area_9 = Area.create(name: "Communication")
+area_9.remote_photo_url = url_9
+area_9.save
+
 
 puts "Creating scholarships"
 min_area = Area.first.id

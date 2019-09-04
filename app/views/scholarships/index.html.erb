@@ -1,39 +1,43 @@
-<h2> Scholarships </h2>
 
-<% if user_signed_in? %>
-  <% @results.each do |result|%>
-  <div class="card-product">
-    <img src= "<%= result.institution.photo %>" />
-    <div class="card-product-infos">
-      <% if not favorite?(result) %>
-        <%= link_to scholarship_favorites_path(result), method: :post do %>
-          <i class="fas fa-heart" style = "color: pink;"></i>
-        <% end %>
-      <% else %>
-        <%= link_to scholarship_favorite_path(result, current_user.favorites.find_by(scholarship: result)), method: :delete do %>
-          <i class="fas fa-heart" style = "color: black;"></i>
-        <% end %>
-      <% end %>
-      <h2><%= result.name %></h2>
-      <h2><%= result.institution.name %></h2>
-      <p><%= result.description %></p>
-    </div>
-  </div>
-  <br>
-  <% end %>
-  <% else %>
+<div class="index-page">
+  <h2> Scholarships </h2>
+
+  <% if user_signed_in? %>
     <% @results.each do |result|%>
-      <div class="card-product">
-        <img src= "<%= result.institution.photo %>" />
-        <div class="card-product-infos">
+    <div class="card-product">
+      <img src= "<%= result.institution.photo %>" />
+      <div class="card-product-infos">
+        <% if not favorite?(result) %>
           <%= link_to scholarship_favorites_path(result), method: :post do %>
             <i class="fas fa-heart" style = "color: pink;"></i>
           <% end %>
-          <h2><%= result.name %></h2>
-          <h2><%= result.institution.name %></h2>
-          <p><%= result.description %></p>
-        </div>
+        <% else %>
+          <%= link_to scholarship_favorite_path(result, current_user.favorites.find_by(scholarship: result)), method: :delete do %>
+            <i class="fas fa-heart" style = "color: black;"></i>
+          <% end %>
+        <% end %>
+        <h2><%= result.name %></h2>
+        <h2><%= result.institution.name %></h2>
+        <p><%= result.description %></p>
       </div>
-      <br>
+    </div>
+    <br>
     <% end %>
-<% end %>
+    <% else %>
+      <% @results.each do |result|%>
+        <div class="card-product">
+          <img src= "<%= result.institution.photo %>" />
+          <div class="card-product-infos">
+            <%= link_to scholarship_favorites_path(result), method: :post do %>
+              <i class="fas fa-heart" style = "color: pink;"></i>
+            <% end %>
+
+            <h2><%= result.name %></h2>
+            <h2><%= result.institution.name %></h2>
+            <p><%= result.description %></p>
+          </div>
+        </div>
+        <br>
+      <% end %>
+  <% end %>
+</div>
