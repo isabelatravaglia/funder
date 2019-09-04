@@ -4,6 +4,7 @@
 
   <% if user_signed_in? %>
     <% @results.each do |result|%>
+
     <div class="card-product">
       <img src= "<%= result.institution.photo %>" />
       <div class="card-product-infos">
@@ -25,6 +26,7 @@
     <% end %>
     <% else %>
       <% @results.each do |result|%>
+
         <div class="card-product">
           <img src= "<%= result.institution.photo %>" />
           <div class="card-product-infos">
