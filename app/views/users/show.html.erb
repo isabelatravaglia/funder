@@ -15,23 +15,41 @@
 </div>
  -->
 
-<div class="row equal d-flex justify-content-center">
+<div class="row equal d-flex justify-content-center overflow-auto">
 
   <div class="col-xs-6 col-sm-3">
     <div class="favorites border border-dark">
-    <h2>My Favorite</h2>
+      <div style="border:1px solid black" class="favorite">
+      <h2>My Favorite</h2>
+      <%current_user.favorites.each do |favorite| %>
+      <ul>
+        <%=link_to scholarships_path do %>
+        <li li class="nav-item dropdown"> <%=favorite.scholarship.name %></li>
+      </ul>
+      <% end %>
+      <% end%>
+      </div>
     </div>
   </div>
 
-    <div class="col-xs-6 col-sm-3">
-      <div class="alerts border border-dark">
+  <div class="col-xs-6 col-sm-3">
+    <div class="border border-dark">
+      <div class="myalert">
       <h2>My Alert</h2>
+      <%current_user.alerts.each do |alert|%>
+
+      <ul>
+        <li><%=alert.area.name%></li>
+      </ul>
+      <% end %>
       </div>
     </div>
+  </div>
 
   <div class="col-xs-6 col-sm-3 container3">
     <div class="profile border border-dark">
-      <div class="profile"><h2>My Profile</h2>
+      <div class="profile">
+        <h2>My Profile</h2>
         <ul>
           <li>Full Name: <%=@user.first_name%> <%=@user.last_name%> </li>
           <li> Your area of study: <%=@user.area%></li>
