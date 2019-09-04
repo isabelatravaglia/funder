@@ -2,9 +2,16 @@
 
 <% if user_signed_in? %>
   <% @scholarships.each do |scholarship|%>
-  <%= link_to scholarship_path(scholarship) do %>
+
     <div class="card-product">
-      <%= image_tag scholarship.institution.photo_url %>
+
+       <%= link_to scholarship_path(scholarship) do %>
+        <div class="link-image">
+        <%= image_tag cl_image_path scholarship.institution.photo %>
+        </div>
+      <% end %>
+
+
         <div class="card-product-infos">
           <%= icon(current_user.likes?(scholarship) ? "fas color-fas" : "far color-far" , "heart") %>
           <h2><%= scholarship.name %></h2>
@@ -12,7 +19,7 @@
           <p><%= scholarship.description %></p>
         </div>
       </div>
-    <% end %>
+
   <% end %>
 
 <% else %>
@@ -21,7 +28,7 @@
     <div class="card-product">
       <%= image_tag scholarship.institution.photo_url %>
       <div class="card-product-infos">
-         <%= icon(current_user.likes?(scholarship) ? "fas color-fas " : "far color-far" , "heart") %>
+
         <h2><%= scholarship.name %></h2>
         <h2><%= scholarship.institution.name %></h2>
         <p><%= scholarship.description %></p>

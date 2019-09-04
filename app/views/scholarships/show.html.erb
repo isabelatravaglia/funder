@@ -10,7 +10,13 @@
       <p><%= @scholarship.description %></p>
       <%= link_to "See more information", @scholarship.url, class: 'btn btn-outline-secondary rounded-pill'%>
     </div>
-     <%= icon(current_user.likes?(@scholarship) ? "fas color-fas" : "far color-far" , "heart") %>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= icon(current_user.likes?(@scholarship) ? "fas color-fas" : "far color-far" , "heart") %>
+      <% end %>
+    </div>
+
     <div>
       <%= link_to "Back to Scholarships", scholarships_path, class: 'btn btn-outline-secondary rounded-pill' %>
     </div>
