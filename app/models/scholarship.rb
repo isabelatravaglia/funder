@@ -1,4 +1,6 @@
 class Scholarship < ApplicationRecord
+  after_save :async_alert_check
+
   belongs_to :area
   belongs_to :institution
   has_many :favorites, dependent: :destroy
@@ -10,9 +12,13 @@ class Scholarship < ApplicationRecord
   validates :url, presence: true
 
   include PgSearch::Model
-    pg_search_scope :search_by_name_institution_and_area,
-      against: [ :name, :institution_id, :area_id ],
-      using: {
-        tsearch: { prefix: true }
-      }
+  pg_search_scope :search_by_name_institution_and_area,
+  against: [:name, :institution_id, :area_id],
+  using: {
+      tsearch: { prefix: true }
+    }
+
+  def async_alert_check
+    CheckNewScholarshipsJob.perform_later(self.id)
+  end
 end
