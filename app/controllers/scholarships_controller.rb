@@ -9,4 +9,10 @@ class ScholarshipsController < ApplicationController
     true if current_user.favorites.find_by(scholarship: scholarship) != nil
   end
   helper_method :favorite?
+
+  def show
+    @scholarship = Scholarship.find(params[:id])
+  end
+
+
 end

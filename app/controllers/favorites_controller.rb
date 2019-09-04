@@ -9,7 +9,12 @@ class FavoritesController < ApplicationController
       @favorite.user = current_user
       @favorite.scholarship = Scholarship.find(params[:scholarship_id])
       @favorite.save
+
+      # if current_page?(scholarship_path(@favorite.scholarship))
+      #   redirect_to scholarship_path(scholarship)
+      # else
       redirect_to scholarships_path
+      # end
     else
       redirect_to edit_user_registration_path, notice: "Please fill in your profile to save a scholarship to your favorites!"
     end
