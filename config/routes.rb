@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :scholarships, only:[:index] do
     resources :favorites, only:[:index, :create, :destroy]
   end
+  resources :alerts, only:[:new, :create, :edit, :update, :destroy]
 end
