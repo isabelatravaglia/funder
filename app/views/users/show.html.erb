@@ -6,13 +6,15 @@
     <div class="favorites">
       <div class="favorite">
 
+
       <%current_user.favorites.each do |favorite| %>
+      <% scholarship = Scholarship.find(favorite.favorited_id) %>
         <div class="card-product">
-          <%=image_tag favorite.scholarship.institution.photo_url %>
+          <%=image_tag scholarship.institution.photo_url %>
           <div class="card_product_infos">
-            <h2><%= link_to favorite.scholarship.name, scholarships_path %></h2>
-            <p>Aplication starts: <%=favorite.scholarship.application_start_date%></p>
-            <p>Deadline: <%=favorite.scholarship.application_end_date %></p>
+            <h2><%= link_to scholarship.name, scholarships_path %></h2>
+            <p>Aplication starts: <%=scholarship.application_start_date%></p>
+            <p>Deadline: <%=scholarship.application_end_date %></p>
           </div>
         </div>
       <% end%>
