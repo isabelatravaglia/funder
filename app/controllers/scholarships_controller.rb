@@ -12,17 +12,12 @@ class ScholarshipsController < ApplicationController
   def show
     @scholarship = Scholarship.find(params[:id])
     @results = Scholarship.search_by_name_institution_and_area(params[:query])
-
   end
 
   def favorite?(scholarship)
     true if current_user.favorites.find_by(scholarship: scholarship) != nil
   end
   helper_method :favorite?
-
-
-
-
 
   private
 
