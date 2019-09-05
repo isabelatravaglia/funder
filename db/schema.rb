@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_143550) do
+ActiveRecord::Schema.define(version: 2019_09_05_172805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,9 @@ ActiveRecord::Schema.define(version: 2019_09_05_143550) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "scholarship_id"
     t.index ["alert_id"], name: "index_notifications_on_alert_id"
+    t.index ["scholarship_id"], name: "index_notifications_on_scholarship_id"
   end
 
   create_table "scholarships", force: :cascade do |t|
@@ -109,6 +111,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_143550) do
   add_foreign_key "favorites", "users"
   add_foreign_key "institutions", "users"
   add_foreign_key "notifications", "alerts"
+  add_foreign_key "notifications", "scholarships"
   add_foreign_key "scholarships", "areas"
   add_foreign_key "scholarships", "institutions"
 end

@@ -1,5 +1,6 @@
 class Notification < ApplicationRecord
   belongs_to :alert
+  belongs_to :scholarship
   validates :status, presence: true
 
   after_save :add_count
