@@ -14,3 +14,19 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.card-category:hover {
+  opacity: 0.5;
+}
+
+  .filter a, .filter a:hover, .filter a:active, .filter a:visited, .filter a:focus {
+    text-decoration: none;
+  }
+
+.filter-btn {
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+}

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'pages#home'
   resources :users, only: [:index, :show, :edit]
@@ -7,4 +11,5 @@ Rails.application.routes.draw do
   resources :scholarships, only:[:index, :show] do
     resources :favorites, only:[:index, :create, :destroy]
   end
+  resources :alerts, only:[:new, :create, :edit, :update, :destroy]
 end

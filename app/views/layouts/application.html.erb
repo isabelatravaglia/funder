@@ -12,18 +12,18 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <% if params[:controller] == "pages" %>
-    <div class="homepage-content">
-    <% else %>
-    <div class="site-content">
-    <% end %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <% if params[:controller] == "pages" %>
+        <div class="homepage-content">
+      <% else %>
+        <div class="site-content">
+      <% end %>
+      <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
 
   </body>
 </html>

@@ -9,6 +9,9 @@ gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
 
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
@@ -20,7 +23,7 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'country_select'
 gem 'faker'
-
+gem 'pg_search', '~> 2.3.0'
 
 
 group :development do

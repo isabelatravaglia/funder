@@ -1,0 +1,44 @@
+.position-search {
+  margin-left: 0;
+  margin-top: 100px;
+
+}
+
+.home-search-form {
+  width: 50%;
+  margin-left: 25%;
+
+  form {
+    width: 100%;
+  }
+
+  #query {
+    width: 75%;
+  }
+
+  .home-search-btn {
+    width: 23%;
+  }
+
+}
+
+@media all and (max-width: 690px) {
+  .home-search-form {
+    width: 100%;
+    margin-left: 0%;
+
+    form {
+      width: 100%;
+    }
+
+    #query {
+      width: 100%;
+    }
+
+    .home-search-btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+
+}
