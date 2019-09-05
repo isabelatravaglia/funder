@@ -11,11 +11,11 @@
       <%= link_to "See more information", @scholarship.url, class: 'btn btn-outline-secondary rounded-pill'%>
     </div>
 
-    <div>
+    <div id='<%= @scholarship.id %>'>
       <% if user_signed_in? %>
         <%= icon(current_user.likes?(@scholarship) ? "fas" : "far color-far" , "heart") %>
       <% else %>
-       <%= link_to scholarship_favorites_path(@scholarship), method: :post do %>
+       <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
           <i class="far fa-heart color-far"></i>
         <% end %>
       <% end %>

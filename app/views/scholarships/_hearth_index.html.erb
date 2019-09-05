@@ -1,9 +1,0 @@
-<% if not favorite?(scholarship) %>
-  <%= link_to scholarship_favorites_path(scholarship),id:'ajax', method: :post, remote: true do %>
-    <i class="fas fa-heart" style = "color: pink;"></i>
-  <% end %>
-<% else %>
-  <%= link_to scholarship_favorite_path(scholarship, current_user.favorites.find_by(scholarship: scholarship)), method: :delete, id:'ajax', remote: true do %>
-    <i class="fas fa-heart" style = "color: black;"></i>
-  <% end %>
-<% end %>

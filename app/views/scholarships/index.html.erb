@@ -7,17 +7,17 @@
     <% @results.each do |result|%>
 
     <div class="card-product">
-      
-      
+
+
       <%= link_to scholarship_path(result) do %>
         <div class="link-image">
         <%= image_tag cl_image_path result.institution.photo %>
         </div>
       <% end %>
-      
-      
-      
-      <div class="card-product-infos">
+
+
+
+      <div class="card_product_infos" id="<%= result.id %>">
          <%= icon(current_user.likes?(result) ? "fas" : "far color-far" , "heart") %>
         <h2><%= result.name %></h2>
         <h2><%= result.institution.name %></h2>
@@ -34,12 +34,10 @@
             <div class="link-image">
               <%= image_tag result.institution.photo_url %>
              </div>
-           <% end %>      
-          
-          
-          
-          <div class="card-product-infos">
-            <%= link_to scholarship_favorites_path(result), method: :post do %>
+           <% end %>
+
+          <div class="card_product_infos">
+            <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
               <i class="fas fa-heart color-far"></i>
             <% end %>
 

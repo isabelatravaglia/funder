@@ -6,13 +6,15 @@
     <div class="favorites">
       <div class="favorite">
 
+
       <%current_user.favorites.each do |favorite| %>
+      <% scholarship = Scholarship.find(favorite.favorited_id) %>
         <div class="card-product">
-          <%=image_tag favorite.scholarship.institution.photo_url %>
-          <div class="card-product-infos">
-            <h2><%= link_to favorite.scholarship.name, scholarships_path %></h2>
-            <p>Aplication starts: <%=favorite.scholarship.application_start_date%></p>
-            <p>Deadline: <%=favorite.scholarship.application_end_date %></p>
+          <%=image_tag scholarship.institution.photo_url %>
+          <div class="card_product_infos">
+            <h2><%= link_to scholarship.name, scholarships_path %></h2>
+            <p>Aplication starts: <%=scholarship.application_start_date%></p>
+            <p>Deadline: <%=scholarship.application_end_date %></p>
           </div>
         </div>
       <% end%>
@@ -27,12 +29,18 @@
 
       <%current_user.alerts.each do |alert|%>
         <div class="card-product">
+
+          <%=image_tag alert.institution.photo_url %>
+          <div class="card_product_infos">
+            <h2><%= link_to alert.area.name, scholarships_path %></h2>
+            <p><strong><%=alert.institution.name  %></strong></p>
+
           <%if alert.institution.present?%>
             <%=image_tag alert.institution.photo_url %>
           <% else %>
             <%= image_tag alert.area.photo_url %>
           <% end %>
-          <div class="card-product-infos">
+          <div class="card_product_infos">
             <%if alert.institution.present? && alert.institution.present? %>
               <p><strong><%=alert.institution.name  %></strong></p>
               <h2><%= link_to alert.area.name, scholarships_path %></h2>
@@ -41,6 +49,7 @@
             <% else %>
               <h2><%= link_to alert.area.name, scholarships_path %></h2>
             <% end %>
+
           </div>
         </div>
       <% end%>
@@ -52,7 +61,7 @@
     <h2>My Profile</h2>
     <div class="personal-infor">
         <div class="card-product1">
-          <div class="card-product-infos">
+          <div class="card_product_infos">
             <ul>
               <li><h5>Full Name: <%=@user.first_name%> <%=@user.last_name%> </h5></li>
               <li> <h5>Your area of study: <%=@user.area%></h5></li>
