@@ -1,6 +1,6 @@
 <div class="container mb-4">
   <div class="row justify-content-center">
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-6 justify-content-center form-login">
       <h2>New Alert</h2>
       <%= simple_form_for @alert do |f| %>
 
@@ -20,7 +20,7 @@
           <%= f.input :description, as: :text %>
           <%= f.input :area_id, collection: @areas %>
           <%= f.input :institution_id, collection: @institutions%>
-          <%= f.submit%>
+          <%= f.button :submit, "submit", class: "btn btn-warning"%>
         </div>
       <% end %>
     </div>
