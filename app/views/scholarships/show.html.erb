@@ -1,31 +1,58 @@
+
+
+
 <div class="show-card">
   <div class="content-background">
 
-    <%= image_tag @scholarship.institution.photo_url %>
-
-    <div class="show-card-infos">
-      <h2><%= @scholarship.name %></h2>
-      <h3><%= @scholarship.institution.name %></h3>
-      <p><%= @scholarship.area.name %></p>
-      <p><%= @scholarship.description %></p>
-      <%= link_to "See more information", @scholarship.url, class: 'btn btn-outline-secondary rounded-pill'%>
+    <div class="institution-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path @scholarship.institution.photo %>')">
+      <h1>The perfect scholarship for you</h1>
     </div>
 
-    <div id='<%= @scholarship.id %>'>
+    <%#= image_tag @scholarship.institution.photo_url %>
+
+    <div class="show-card-text">
+
+      <div class="infos-name">
+        <h2><%= @scholarship.name %></h2>
+        <h3><%= @scholarship.institution.name %></h3>
+        <h4><%= @scholarship.area.name %></h4>
+        <p><i class="far fa-calendar-alt"> Application: </i> <%= @scholarship.application_start_date %> / <%= @scholarship.application_end_date %>  </p>
+
+      </div>
+
+      <div class="description">
+
+        <p><%= @scholarship.description %> <p>The breadth and depth of our expertise enables us to offer supervision in all major areas of economics and finance. The School has more than 40 research-active faculty working in a wide range of research areas, including macroeconomics, microeconomic theory and game theory, applied microeconomics, econometric theory, time series analysis, theoretical and empirical finance.</p></p>
+
+      </div>
+
+    </div>
+
+      <div class="btn-info">
+      <%= link_to "More information", @scholarship.url, class: 'btn btn-warning', target: :_blank %>
+      </div>
+
+
+
+    <div id='<%= @scholarship.id %>' class="hearth-icon" >
       <% if user_signed_in? %>
-        <%= icon(current_user.likes?(@scholarship) ? "fas" : "far color-far" , "heart") %>
+        <%= icon(current_user.likes?(@scholarship) ? "fas color-fas" : "far color-far" , "heart") %>
       <% else %>
        <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
           <i class="far fa-heart color-far"></i>
         <% end %>
       <% end %>
-
-    </div>
-
-    <div>
-      <%= link_to "Back to Scholarships", scholarships_path, class: 'btn btn-outline-secondary rounded-pill' %>
     </div>
   </div>
+
+  <div class="btn-back">
+      <%= link_to "Back to Scholarships", scholarships_path, class: 'btn btn-warning' %>
+  </div>
+
 </div>
+
+
+
+
 
 
