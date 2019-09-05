@@ -8,17 +8,26 @@ class FavoritesController < ApplicationController
       @favorite = Favorite.new
       @favorite.user = current_user
       @favorite.scholarship = Scholarship.find(params[:scholarship_id])
+
       if @favorite.save
-         respond_to do |format|
-            format.html { redirect_to request.referrer }
-            format.js  # <-- will render `app/views/reviews/create.js.erb`
-          end
+        redirect_to request.referrer
       else
-          respond_to do |format|
-              format.html { redirect_to edit_user_registration_path, notice: "Please fill in your profile to save a scholarship to your favorites!" }
-              format.js  # <-- idem
-          end
+        redirect_to edit_user_registration_path, notice: "Please fill in your profile to save a scholarship to your favorites!"
       end
+
+
+
+      # if @favorite.save
+      #    respond_to do |format|
+      #       format.html { redirect_to request.referrer }
+      #       format.js  # <-- will render `app/views/reviews/create.js.erb`
+      #     end
+      # else
+      #     respond_to do |format|
+      #         format.html { redirect_to edit_user_registration_path, notice: "Please fill in your profile to save a scholarship to your favorites!" }
+      #         format.js  # <-- idem
+      #     end
+      # end
     end
   end
 

@@ -13,8 +13,13 @@
 
     <div>
       <% if user_signed_in? %>
-        <%= icon(current_user.likes?(@scholarship) ? "fas color-fas" : "far color-far" , "heart") %>
+        <%= icon(current_user.likes?(@scholarship) ? "fas" : "far color-far" , "heart") %>
+      <% else %>
+       <%= link_to scholarship_favorites_path(@scholarship), method: :post do %>
+          <i class="far fa-heart color-far"></i>
+        <% end %>
       <% end %>
+
     </div>
 
     <div>
