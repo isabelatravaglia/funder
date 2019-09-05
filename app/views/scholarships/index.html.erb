@@ -13,14 +13,20 @@
             <%= image_tag cl_image_path result.institution.photo %>
 
           <div class="card_product_infos" id="<%= result.id %>">
-             <%= icon(current_user.likes?(result) ? "fas" : "far color-far" , "heart") %>
+             <%= icon(current_user.likes?(result) ? "fas color-fas" : "far color-far" , "heart") %>
             <h2><%= result.name %></h2>
             <h2><%= result.institution.name %></h2>
             <p><%= result.description %></p>
           </div>
           <%= link_to '', result, class: 'card-link' %>
         </div>
+
+      
+
+
+
         <br>
+
     </div>
      <br>
     <% end %>
@@ -40,7 +46,7 @@
 
           <div class="card_product_infos">
             <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
-              <i class="fas fa-heart color-far"></i>
+              <i class="far fa-heart color-far"></i>
             <% end %>
 
             <h2><%= result.name %></h2>

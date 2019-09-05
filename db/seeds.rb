@@ -6,7 +6,7 @@ Favorite.destroy_all
 Scholarship.destroy_all
 Alert.destroy_all
 Notification.destroy_all
-TYPES = ["Research of ", "PHd of "]
+TYPES = ["Research of ", "PhD of "]
 
 puts "Creating user admin"
 url_admin = "https://res.cloudinary.com/veronicabraga/image/upload/v1567519066/institutions/User%20avatar/photo-1507003211169-0a1dd7228f2d_a5w1nr.jpg"
