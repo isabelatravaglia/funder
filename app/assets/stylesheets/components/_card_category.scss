@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -13,6 +15,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
 }
 
 .card-category:hover {

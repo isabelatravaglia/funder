@@ -147,7 +147,7 @@ min_schol = Scholarship.first.id
 max_schol = Scholarship.last.id
 puts "Creating favorites"
 10.times do
-  f = Favorite.create(user: admin, favorited_type:'Scholarship', favorited_id: Scholarship.find(rand(min_schol..max_schol)).id)
+  f = Favorite.create!(user: admin, favorited_type:'Scholarship', favorited_id: Scholarship.find(rand(min_schol..max_schol)).id)
   puts f
 end
 
@@ -170,5 +170,5 @@ puts "Creating notifications"
 min_alert = Alert.first.id
 max_alert = Alert.last.id
 5.times do
-  Notification.create(alert: Alert.find(rand(min_alert..max_alert)), status: ["unread", "read"].sample)
+  Notification.create(alert: Alert.find(rand(min_alert..max_alert)), status: ["unread", "read"].sample, scholarship: Scholarship.find(rand(min_schol..max_schol)))
 end

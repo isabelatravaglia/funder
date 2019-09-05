@@ -1,5 +1,5 @@
 class AlertsController < ApplicationController
-  before_action :fetch_alerts, only:[:edit, :update, :delete]
+  before_action :fetch_alerts, only:[:edit, :update, :delete, :change_notification_status]
 
   def new
     @alert = Alert.new
@@ -33,6 +33,20 @@ class AlertsController < ApplicationController
   def delete
     @alert.delete
     redirect_to user_path(current_user), notice: "Alert deleted!"
+  end
+
+  def change_notification_status
+    scholarships = []
+    @alert.notifications.each do |notification|
+      notification.status = "read"
+      notification.save
+      scholarships << notification.scholarship_id
+    end
+    scholarships.reject { |x| x.nil? }
+    params = {scholarship: scholarships}.to_query
+    # query = Scholarship.where(id: scholarships)
+    redirect_to scholarships_path({query: params})
+    # redirect_to scholarships_path(params:'407')
   end
 
   private

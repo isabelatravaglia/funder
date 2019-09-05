@@ -12,7 +12,6 @@ class ScholarshipsController < ApplicationController
   def show
     @scholarship = Scholarship.find(params[:id])
     @results = Scholarship.search_by_name_institution_and_area(params[:query])
-
   end
 
   def favorite?(scholarship)
@@ -20,14 +19,9 @@ class ScholarshipsController < ApplicationController
   end
   helper_method :favorite?
 
-
-
-
-
   private
 
   def scholarship_params
     params.require(:scholarship).permit(:name, :institution, :description, :photo)
   end
-
 end

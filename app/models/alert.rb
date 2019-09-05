@@ -12,4 +12,8 @@ class Alert < ApplicationRecord
       errors.add :base, "Please select Area or Institution"
     end
   end
+
+  def unread_notifications?
+    !self.notifications.find_by(status: "unread").nil?
+  end
 end

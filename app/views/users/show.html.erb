@@ -12,7 +12,7 @@
         <div class="card-product">
           <%=image_tag scholarship.institution.photo_url %>
           <div class="card_product_infos">
-            <h2><%= link_to scholarship.name, scholarships_path %></h2>
+            <h2><%= link_to scholarship.name, scholarship_path(scholarship.id) %></h2>
             <p>Aplication starts: <%=scholarship.application_start_date%></p>
             <p>Deadline: <%=scholarship.application_end_date %></p>
           </div>
@@ -27,10 +27,8 @@
     <div class="favorites">
       <div class="favorite">
 
-      <%current_user.alerts.each do |alert|%>
+      <%@sorted_alerts.each do |alert|%>
         <div class="card-product">
-
-
           <%if alert.institution.present?%>
             <%=image_tag alert.institution.photo_url %>
           <% else %>
@@ -44,6 +42,10 @@
               <p><strong><%=alert.institution.name  %></strong></p>
             <% else %>
               <h2><%= link_to alert.area.name, scholarships_path %></h2>
+            <% end %>
+
+            <% if alert.unread_notifications? %>
+               <%=  link_to pluralize(alert.notifications.count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
             <% end %>
 
           </div>
