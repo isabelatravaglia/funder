@@ -29,10 +29,27 @@
 
       <%current_user.alerts.each do |alert|%>
         <div class="card-product">
+
           <%=image_tag alert.institution.photo_url %>
-          <div class="card_product_infos-">
+          <div class="card_product_infos">
             <h2><%= link_to alert.area.name, scholarships_path %></h2>
             <p><strong><%=alert.institution.name  %></strong></p>
+
+          <%if alert.institution.present?%>
+            <%=image_tag alert.institution.photo_url %>
+          <% else %>
+            <%= image_tag alert.area.photo_url %>
+          <% end %>
+          <div class="card_product_infos">
+            <%if alert.institution.present? && alert.institution.present? %>
+              <p><strong><%=alert.institution.name  %></strong></p>
+              <h2><%= link_to alert.area.name, scholarships_path %></h2>
+            <% elsif alert.institution.present? %>
+              <p><strong><%=alert.institution.name  %></strong></p>
+            <% else %>
+              <h2><%= link_to alert.area.name, scholarships_path %></h2>
+            <% end %>
+
           </div>
         </div>
       <% end%>
