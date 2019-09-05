@@ -13,7 +13,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <p> Hey, <%=current_user.first_name %> </p>
         </li>
         <% if current_user.profile_incomplete? %>
           <li class="nav-item">
@@ -43,8 +43,6 @@
               <%= link_to "institution action", "#", class: "dropdown-item" %>
             <% end %>
 
-
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
