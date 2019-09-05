@@ -1,4 +1,5 @@
 
+
 <div class="index-page">
   <h2> Scholarships </h2>
 
@@ -6,17 +7,18 @@
     <% @results.each do |result|%>
 
     <div class="card-product">
-      <img src= "<%= result.institution.photo %>" />
+      
+      
+      <%= link_to scholarship_path(result) do %>
+        <div class="link-image">
+        <%= image_tag cl_image_path result.institution.photo %>
+        </div>
+      <% end %>
+      
+      
+      
       <div class="card-product-infos">
-        <% if not favorite?(result) %>
-          <%= link_to scholarship_favorites_path(result), method: :post do %>
-            <i class="fas fa-heart" style = "color: pink;"></i>
-          <% end %>
-        <% else %>
-          <%= link_to scholarship_favorite_path(result, current_user.favorites.find_by(scholarship: result)), method: :delete do %>
-            <i class="fas fa-heart" style = "color: black;"></i>
-          <% end %>
-        <% end %>
+         <%= icon(current_user.likes?(result) ? "fas" : "far color-far" , "heart") %>
         <h2><%= result.name %></h2>
         <h2><%= result.institution.name %></h2>
         <p><%= result.description %></p>
@@ -28,10 +30,17 @@
       <% @results.each do |result|%>
 
         <div class="card-product">
-          <img src= "<%= result.institution.photo %>" />
+          <%= link_to scholarship_path(result) do %>
+            <div class="link-image">
+              <%= image_tag result.institution.photo_url %>
+             </div>
+           <% end %>      
+          
+          
+          
           <div class="card-product-infos">
             <%= link_to scholarship_favorites_path(result), method: :post do %>
-              <i class="fas fa-heart" style = "color: pink;"></i>
+              <i class="fas fa-heart color-far"></i>
             <% end %>
 
             <h2><%= result.name %></h2>
@@ -43,3 +52,4 @@
       <% end %>
   <% end %>
 </div>
+

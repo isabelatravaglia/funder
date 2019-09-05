@@ -1,0 +1,31 @@
+<div class="show-card">
+  <div class="content-background">
+
+    <%= image_tag @scholarship.institution.photo_url %>
+
+    <div class="show-card-infos">
+      <h2><%= @scholarship.name %></h2>
+      <h3><%= @scholarship.institution.name %></h3>
+      <p><%= @scholarship.area.name %></p>
+      <p><%= @scholarship.description %></p>
+      <%= link_to "See more information", @scholarship.url, class: 'btn btn-outline-secondary rounded-pill'%>
+    </div>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= icon(current_user.likes?(@scholarship) ? "fas" : "far color-far" , "heart") %>
+      <% else %>
+       <%= link_to scholarship_favorites_path(@scholarship), method: :post do %>
+          <i class="far fa-heart color-far"></i>
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <div>
+      <%= link_to "Back to Scholarships", scholarships_path, class: 'btn btn-outline-secondary rounded-pill' %>
+    </div>
+  </div>
+</div>
+
+

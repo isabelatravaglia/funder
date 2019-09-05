@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :favorites, dependent: :destroy
+  has_many :favorite_scholarships, through: :favorites, source: :favorited, source_type: 'Scholarship'
   has_many :institutions, dependent: :destroy
   has_many :alerts, dependent: :destroy
 
@@ -17,6 +18,12 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   before_create :define_student_role
+
+  def likes?(scholarship)
+    favorite_scholarships.any? { |p| p.id == scholarship.id }
+  end
+
+
 
   def define_student_role
     self.role = "student"

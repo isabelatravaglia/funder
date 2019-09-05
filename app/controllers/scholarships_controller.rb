@@ -20,9 +20,14 @@ class ScholarshipsController < ApplicationController
   end
   helper_method :favorite?
 
+
+
+
+
   private
 
   def scholarship_params
     params.require(:scholarship).permit(:name, :institution, :description, :photo)
   end
+
 end
