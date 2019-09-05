@@ -1,40 +1,42 @@
 
 
 <div class="index-page">
-  <h2> Scholarships </h2>
+  <h1> See all Scholarships </h1>
 
   <% if user_signed_in? %>
-    <% @results.each do |result|%>
-
-    <div class="card-product">
-
-
-      <%= link_to scholarship_path(result) do %>
-        <div class="link-image">
-        <%= image_tag cl_image_path result.institution.photo %>
-        </div>
-      <% end %>
-
-
-
-      <div class="card_product_infos" id="<%= result.id %>">
-         <%= icon(current_user.likes?(result) ? "fas" : "far color-far" , "heart") %>
-        <h2><%= result.name %></h2>
-        <h2><%= result.institution.name %></h2>
-        <p><%= result.description %></p>
-      </div>
-    </div>
-    <br>
-    <% end %>
-    <% else %>
+    <div class="row">
       <% @results.each do |result|%>
+      <div class="col-sm-12 col-md-6 col-lg-6">
 
         <div class="card-product">
-          <%= link_to scholarship_path(result) do %>
-            <div class="link-image">
-              <%= image_tag result.institution.photo_url %>
-             </div>
-           <% end %>
+
+            <%= image_tag cl_image_path result.institution.photo %>
+
+          <div class="card_product_infos" id="<%= result.id %>">
+             <%= icon(current_user.likes?(result) ? "fas" : "far color-far" , "heart") %>
+            <h2><%= result.name %></h2>
+            <h2><%= result.institution.name %></h2>
+            <p><%= result.description %></p>
+          </div>
+          <%= link_to '', result, class: 'card-link' %>
+        </div>
+        <br>
+    </div>
+     <br>
+    <% end %>
+    </div>
+
+
+    <% else %>
+
+
+    <div class="row">
+      <% @results.each do |result|%>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+
+        <div class="card-product">
+          <%= image_tag result.institution.photo_url %>
+
 
           <div class="card_product_infos">
             <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
@@ -45,9 +47,13 @@
             <h2><%= result.institution.name %></h2>
             <p><%= result.description %></p>
           </div>
+          <%= link_to '', scholarship_path(result), class: 'card-link' %>
         </div>
         <br>
+      </div>
+      <br>
       <% end %>
+    </div>
   <% end %>
 </div>
 

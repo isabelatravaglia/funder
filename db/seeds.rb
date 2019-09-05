@@ -147,7 +147,7 @@ min_schol = Scholarship.first.id
 max_schol = Scholarship.last.id
 puts "Creating favorites"
 10.times do
-  f = Favorite.create(user: admin, favorited_type:'Scholarship', favorited_id: Scholarship.find(rand(min_schol..max_schol)).id)
+  f = Favorite.create!(user: admin, favorited_type:'Scholarship', favorited_id: Scholarship.find(rand(min_schol..max_schol)).id)
   puts f
 end
 

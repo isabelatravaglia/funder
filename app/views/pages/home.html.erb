@@ -32,9 +32,8 @@
 <div class="row">
 
   <% @areas.each do |area|  %>
-
     <div class="col-sm-12 col-md-6 col-lg-4 filter">
-      <%= link_to scholarships_path({query: area}) do %>
+      <%= link_to scholarships_path({query: area.name}) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path area.photo %>')">
         <%= area.name %>
       </div>
