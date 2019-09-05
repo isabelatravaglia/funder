@@ -2,8 +2,8 @@ puts "Destroying records"
 User.destroy_all
 Institution.destroy_all
 Area.destroy_all
-Scholarship.destroy_all
 Favorite.destroy_all
+Scholarship.destroy_all
 Alert.destroy_all
 Notification.destroy_all
 TYPES = ["Research of ", "PHd of "]
@@ -147,7 +147,8 @@ min_schol = Scholarship.first.id
 max_schol = Scholarship.last.id
 puts "Creating favorites"
 10.times do
-  Favorite.create(user: admin, scholarship: Scholarship.find(rand(min_schol..max_schol)))
+  f = Favorite.create(user: admin, favorited_type:'Scholarship', favorited_id: Scholarship.find(rand(min_schol..max_schol)).id)
+  puts f
 end
 
 puts "Creating alerts"
