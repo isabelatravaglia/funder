@@ -1,6 +1,6 @@
 class Scholarship < ApplicationRecord
   after_save :async_alert_check
-
+  has_many :notifications, dependent: :destroy
   belongs_to :area
   belongs_to :institution
   validates :name, presence: true
@@ -12,7 +12,7 @@ class Scholarship < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name_institution_and_area,
-  against: [:name, :institution_id, :area_id],
+  against: [:name, :institution_id, :area_id, :id],
   using: {
       tsearch: { prefix: true }
     }

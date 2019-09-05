@@ -27,10 +27,8 @@
     <div class="favorites">
       <div class="favorite">
 
-      <%current_user.alerts.each do |alert|%>
+      <%@sorted_alerts.each do |alert|%>
         <div class="card-product">
-
-
           <%if alert.institution.present?%>
             <%=image_tag alert.institution.photo_url %>
           <% else %>
@@ -44,6 +42,10 @@
               <p><strong><%=alert.institution.name  %></strong></p>
             <% else %>
               <h2><%= link_to alert.area.name, scholarships_path %></h2>
+            <% end %>
+
+            <% if alert.unread_notifications? %>
+               <%=  link_to pluralize(alert.notifications.count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
             <% end %>
 
           </div>

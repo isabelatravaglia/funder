@@ -24,5 +24,4 @@ class ScholarshipsController < ApplicationController
   def scholarship_params
     params.require(:scholarship).permit(:name, :institution, :description, :photo)
   end
-
 end
