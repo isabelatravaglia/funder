@@ -30,10 +30,6 @@
       <%current_user.alerts.each do |alert|%>
         <div class="card-product">
 
-          <%=image_tag alert.institution.photo_url %>
-          <div class="card_product_infos">
-            <h2><%= link_to alert.area.name, scholarships_path %></h2>
-            <p><strong><%=alert.institution.name  %></strong></p>
 
           <%if alert.institution.present?%>
             <%=image_tag alert.institution.photo_url %>
