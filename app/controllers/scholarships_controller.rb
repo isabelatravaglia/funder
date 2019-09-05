@@ -2,6 +2,7 @@ class ScholarshipsController < ApplicationController
   skip_before_action :authenticate_user!, only:[:index, :show]
 
   def index
+    byebug
     if params[:query].present?
       @results = Scholarship.search_by_name_institution_and_area(params[:query])
     else

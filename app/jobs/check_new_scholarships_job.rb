@@ -19,4 +19,15 @@ class CheckNewScholarshipsJob < ApplicationJob
     end
     puts "ending alert check"
   end
+
+  private
+
+  def create_alert
+    puts "creating new notification for alert #{alert.id}"
+    @notification = Notification.new
+    @notification.alert = alert
+    @notification.status = "unread"
+    @notification.save
+    puts "new notification created!"
+  end
 end

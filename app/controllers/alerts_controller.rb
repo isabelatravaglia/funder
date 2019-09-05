@@ -35,6 +35,10 @@ class AlertsController < ApplicationController
     redirect_to user_path(current_user), notice: "Alert deleted!"
   end
 
+  def change_notification_status
+    raise
+  end
+
   private
 
   def fetch_alerts
