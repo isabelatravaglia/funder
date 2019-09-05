@@ -1,6 +1,5 @@
 const toggleIcons = function() {
   const icons = document.querySelectorAll('.site-content i')
-  console.log(icons)
 
   const toggleIcon = function(icon) {
     icon.classList.toggle('far');
@@ -8,8 +7,8 @@ const toggleIcons = function() {
   }
 
   icons.forEach((icon) => {
-    const scholarship = icon
-    const scholarshipId = scholarship.id.split('-')[1]
+    const scholarship = icon.parentElement
+    const scholarshipId = scholarship.id
     icon.addEventListener('click', () => {
       if (icon.classList.contains('far')) {
         fetch('/favorite_scholarships', {

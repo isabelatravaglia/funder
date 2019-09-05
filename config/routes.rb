@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :institutions
   resources :scholarships, only:[:index, :show] do
-    resources :favorites, only:[:index, :create, :destroy]
+    resources :favorites, only:[:index]
   end
+  resources :favorite_scholarships, only: [:create, :destroy]
   resources :alerts, only:[:new, :create, :edit, :update, :destroy]
 end

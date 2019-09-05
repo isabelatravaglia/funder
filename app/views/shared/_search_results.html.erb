@@ -4,7 +4,7 @@
     <%= link_to scholarship_path(result), method: :get, :action => 'go' do %>
       <div class="card-product">
         <img src= "<%= result.institution.photo %>" />
-        <div class="card-product-infos">
+        <div class="card_product_infos">
           <h2><%=result.name%></h2>
           <p><%=result.institution%></p>
           <p><%=result.description%></p>
