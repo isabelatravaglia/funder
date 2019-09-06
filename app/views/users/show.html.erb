@@ -10,6 +10,8 @@
 
       <%current_user.favorites.each do |favorite| %>
 
+
+
       <% scholarship = Scholarship.find(favorite.favorited_id) %>
         <div class="card-product-profile">
 
@@ -18,10 +20,16 @@
             <h2><%= scholarship.name%></h2>
             <p>Aplication starts: <%=scholarship.application_start_date%></p>
             <p>Deadline: <%=scholarship.application_end_date %></p>
+            <div class="icon">
+              <%= link_to favorite_path(favorite), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+              </div>
           </div>
           <%= link_to '', scholarship_path(scholarship.id), class: 'card-profile-link' %>
         </div>
       <% end%>
+
       </div>
     </div>
   </div>
@@ -31,6 +39,14 @@
     <div class="favorites">
       <h1>My Alerts</h1>
       <div class="favorite">
+
+        <div class="icon" id="icon-plus">
+          <%= link_to new_alert_path do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </div>
+              
+
 
       <%@sorted_alerts.each do |alert|%>
         <div class="card-product-profile">
@@ -47,15 +63,30 @@
               <p><strong><%=alert.institution.name  %></strong></p>
             <% else %>
               <h2><%= alert.area.name %></h2>
+
             <% end %>
+           
+
 
             <% if alert.unread_notifications? %>
                <%=  link_to pluralize(alert.unread_notif_count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
             <% end %>
 
+
+              <div class="icon" id="icon-trash">
+              <%= link_to alert_path(alert), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+              </div>
+              <div class="icon" id="icon-pencil">
+                <%= link_to edit_alert_path(alert) do %>
+                <i class="fas fa-pencil-alt"></i>
+                <% end %>
+              </div>
+
+            </div>
           </div>
-        </div>
-      <% end%>
+        <% end%>
       </div>
     </div>
   </div>

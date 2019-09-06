@@ -13,15 +13,29 @@ position: relative;
 }
 
 .icon a {
-color: #747474;
+color: #f8a978;
 text-decoration: none;
 &:hover {
   opacity: 0.5;
   }
 }
 
+#icon-plus {
+  right: 40px;
+
+}
+
+#icon-pencil {
+  right: 5px;
+}
+
+#icon-trash {
+  right: 27px;
+}
+
 .row {
   margin: 150px 12%;
+
 
 }
 .favorite {
@@ -118,6 +132,7 @@ text-decoration: none;
 
 }
 
+
 .card-product1 li h5 {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
@@ -135,5 +150,6 @@ text-decoration: none;
   width: 100%;
   z-index: 2;
 }
+
 
 
