@@ -12,9 +12,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <p> Hey, <%=current_user.first_name %> </p>
+        <li class="nav-item">
+          <%= link_to "Profile", user_path(current_user)%>
         </li>
+        <li class="nav-item">
+          <div class="notification-bell d-flex">
+            <% if current_user.notifications.where(status:"unread").count >0 %>
+            <i class="color-fas-bell">
+              <i class="fas fa-bell"></i>
+              </i>
+            <% else %>
+            <i class="color-far-bell">
+              <i class="far fa-bell color-far-bell"></i>
+            </i>
+            <% end %>
+          </div>
+        </li>
+
         <% if current_user.profile_incomplete? %>
           <li class="nav-item">
             <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
@@ -32,7 +46,6 @@
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <% if current_user.student? %>
-              <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
             <% end %>
 
             <% if current_user.premium_student? %>

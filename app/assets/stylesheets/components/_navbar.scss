@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
 .navbar-lewagon {
 
   justify-content: space-between;
@@ -9,13 +11,40 @@
   flex-grow: 0;
 }
 
+
 .navbar-lewagon .navbar-brand img {
   width: 35px;
   opacity: 100%;
 }
 
 
-.navbar-nav p {
-margin-top: 10px;
-margin-right: 5px;
+.navbar-nav a {
+  margin-top: 30px;
+  padding-top: 10px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #737373;
+  text-decoration: none;
+  &:hover {
+    color: #595959;
+  }
+
 }
+
+.navbar-nav {
+  align-items: center;
+  .color-far-bell {
+  color: #f8a978
+}
+
+.color-fas-bell {
+  color: #f8a978
+}
+}
+
+.nav-item {
+  margin-right: 12px;
+}
+
+
