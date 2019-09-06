@@ -4,7 +4,7 @@
 position: relative;
 }
 
-.icon-pencil {
+.icon {
   position: absolute;
   right: 14px;
   top: 10px;
@@ -22,6 +22,7 @@ text-decoration: none;
 
 #icon-plus {
   right: 40px;
+  top: 50px;
 
 }
 
@@ -31,6 +32,11 @@ text-decoration: none;
 
 #icon-trash {
   right: 27px;
+}
+
+#icon-pencil-profile {
+  right: 30px;
+  top: 50px;
 }
 
 .row {
@@ -52,7 +58,7 @@ text-decoration: none;
     font-family: "Roboto", sans-serif;
     font-size: 28px;
     color: #4d4d4d;
-    margin-top: 20px;
+    margin-top: 8px;
     margin-bottom: 20px;
   }
 
@@ -61,7 +67,7 @@ text-decoration: none;
 
   overflow: hidden;
   height: 90px;
-  width: 400px;
+  width: 290px;
   background: #f2f2f2;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -119,7 +125,7 @@ text-decoration: none;
     font-family: "Roboto", sans-serif;
     font-size: 28px;
     color: #4d4d4d;
-    margin-top: 20px;
+    margin-top: 8px;
     margin-bottom: 20px;
   }
 
