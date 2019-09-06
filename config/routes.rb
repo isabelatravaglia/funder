@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :favorite_scholarships, only: [:create, :destroy]
   resources :alerts, only:[:new, :create, :edit, :update, :destroy]
   resources :notifications, only:[:update]
+  resources :favorites, only: [:destroy]
 end

@@ -153,8 +153,9 @@ end
 
 puts "Creating alerts"
 10.times do
-  area = Area.find(rand(min_area..max_area))
-  institution = Institution.find(rand(min_inst..max_inst))
+  scholarship = Scholarship.find(rand(min_schol..max_schol))
+  area = scholarship.area
+  institution = scholarship.institution
 
   name = "Alert for "
   Alert.create(
@@ -167,8 +168,7 @@ puts "Creating alerts"
 end
 
 puts "Creating notifications"
-min_alert = Alert.first.id
-max_alert = Alert.last.id
-5.times do
-  Notification.create(alert: Alert.find(rand(min_alert..max_alert)), status: ["unread", "read"].sample, scholarship: Scholarship.find(rand(min_schol..max_schol)))
+Scholarship.all.each do |scholarship|
+  scholarship.save
 end
+

@@ -1,5 +1,5 @@
 class AlertsController < ApplicationController
-  before_action :fetch_alerts, only:[:edit, :update, :delete, :change_notification_status]
+  before_action :fetch_alerts, only:[:edit, :update, :destroy, :change_notification_status]
 
   def new
     @alert = Alert.new
@@ -30,8 +30,8 @@ class AlertsController < ApplicationController
     end
   end
 
-  def delete
-    @alert.delete
+  def destroy
+    @alert.destroy
     redirect_to user_path(current_user), notice: "Alert deleted!"
   end
 
