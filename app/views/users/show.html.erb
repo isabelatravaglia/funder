@@ -9,8 +9,10 @@
 
 
       <%current_user.favorites.each do |favorite| %>
+
       <% scholarship = Scholarship.find(favorite.favorited_id) %>
         <div class="card-product-profile">
+
           <%=image_tag scholarship.institution.photo_url %>
           <div class="card_product_infos">
             <h2><%= scholarship.name%></h2>

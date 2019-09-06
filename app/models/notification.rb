@@ -4,6 +4,7 @@ class Notification < ApplicationRecord
   validates :status, presence: true
 
   after_save :add_count
+  after_update :add_count
   def add_count
     puts "adding count"
     saved_notification = self

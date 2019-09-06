@@ -1,8 +1,10 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.all
+    @favorites = Favorite.all.order({ created_at: :desc })
   end
 
+
+# Favorite.all.order({ created_at: :desc })
   def create
     if !current_user.profile_incomplete?
       @favorite = Favorite.new

@@ -2,7 +2,9 @@ class ScholarshipsController < ApplicationController
   skip_before_action :authenticate_user!, only:[:index, :show]
 
   def index
-    if params[:query].present?
+    if params[:notifications].present?
+      @results = Scholarship.where(id: params[:notifications])
+    elsif params[:query].present?
       @results = Scholarship.search_by_name_institution_and_area(params[:query])
     else
       @results = Scholarship.all
