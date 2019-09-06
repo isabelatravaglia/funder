@@ -1,7 +1,7 @@
 
 
 <div class="index-page">
-  <h1> See all Scholarships </h1>
+  <%= link_to(scholarships_path) do %> <h1> See all Scholarships </h1> <% end %>
 
   <% if user_signed_in? %>
     <div class="row">
@@ -21,7 +21,7 @@
           <%= link_to '', result, class: 'card-link' %>
         </div>
 
-      
+
 
 
 
