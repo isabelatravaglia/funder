@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+
   # def index
   #   @favorites = Favorite.all
   # end
@@ -8,6 +9,7 @@ class FavoritesController < ApplicationController
   #     @favorite = Favorite.new
   #     @favorite.user = current_user
   #     @favorite.scholarship = Scholarship.find(params[:scholarship_id])
+
 
   #     if @favorite.save
   #       redirect_to request.referrer

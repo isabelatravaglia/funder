@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
 .container3 {
 position: relative;
 }
 
-.icon {
+.icon-pencil {
   position: absolute;
   right: 14px;
   top: 10px;
@@ -31,20 +33,123 @@ text-decoration: none;
   right: 27px;
 }
 
+.row {
+  margin: 150px 12%;
 
+
+}
 .favorite {
   overflow-y: scroll;
   height: 500px;
 }
 
+.favorites {
+  background: #e7e4e4;
+  border-radius: 6px;
+  padding: 25px;
+  max-height: calc(100vh - 150px);
+  h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 28px;
+    color: #4d4d4d;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-.myalert {
-  overflow-y: scroll;
-  height: 500px;
 }
+.card-product-profile {
+
+  overflow: hidden;
+  height: 90px;
+  width: 400px;
+  background: #f2f2f2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.card-product-profile h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product-profile p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-profile .card_product_infos {
+  padding: 16px;
+
+}
+
+.card-product-profile .card_product_infos a {
+  text-decoration: none;
+
+}
+.card-product-profile img {
+  height: 100%;
+  width: 35%;
+  object-fit: cover;
+
+}
+
 
 .card-product1 {
   height: 500px;
+  background: #eae9e9;
+  border-radius: 6px;
+  padding: 25px;
 }
+
+.personal-info {
+
+  background: #e7e4e4;
+  border-radius: 6px;
+  padding: 25px;
+  max-height: calc(100vh - 150px);
+  h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 28px;
+    color: #4d4d4d;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+}
+
+.card-product1 ul {
+
+  list-style-type: none;
+
+}
+
+
+.card-product1 li h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  color: #4d4d4d;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.card-profile-link {
+  position: absolute;
+  top: 26px;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 2;
+}
+
 
 

@@ -2,69 +2,76 @@
 <div class="row equal d-flex justify-content-center overflow-auto">
 
   <div class="col-xs-8 col-sm-4">
-    <h2>My Favorite</h2>
+
     <div class="favorites">
+      <h1>My Favorites</h1>
       <div class="favorite">
 
 
       <%current_user.favorites.each do |favorite| %>
-        <% scholarship = Scholarship.find(favorite.favorited_id) %>
-          <div class="card-product">
-            <%=image_tag scholarship.institution.photo_url %>
-            <div class="card_product_infos" id='<%= favorite.favorited.id %>' >
-              <h2><%= link_to scholarship.name, scholarship_path(scholarship.id) %></h2>
-              <p>Aplication starts: <%=scholarship.application_start_date%></p>
-              <p>Deadline: <%=scholarship.application_end_date %></p>
 
-              <div class="icon">
+
+
+      <% scholarship = Scholarship.find(favorite.favorited_id) %>
+        <div class="card-product-profile">
+
+          <%=image_tag scholarship.institution.photo_url %>
+          <div class="card_product_infos">
+            <h2><%= scholarship.name%></h2>
+            <p>Aplication starts: <%=scholarship.application_start_date%></p>
+            <p>Deadline: <%=scholarship.application_end_date %></p>
+            <div class="icon">
               <%= link_to favorite_path(favorite), method: :delete do %>
                 <i class="fas fa-trash-alt"></i>
               <% end %>
               </div>
-
-              <%#= icon(current_user.likes?(favorite.favorited) ? "fas color-fas" : "far color-far" , "heart") %>
-            </div>
-
-
           </div>
-        <% end %>
+          <%= link_to '', scholarship_path(scholarship.id), class: 'card-profile-link' %>
+        </div>
+      <% end%>
+
       </div>
     </div>
   </div>
 
     <div class="col-xs-8 col-sm-4">
-    <h2>My Alerts</h2>
+
     <div class="favorites">
+      <h1>My Alerts</h1>
       <div class="favorite">
+
         <div class="icon" id="icon-plus">
           <%= link_to new_alert_path do %>
             <i class="fas fa-plus"></i>
           <% end %>
         </div>
+              
 
 
-
-        <%@sorted_alerts.each do |alert|%>
-          <div class="card-product">
-
-            <%if alert.institution.present?%>
-              <%=image_tag alert.institution.photo_url %>
+      <%@sorted_alerts.each do |alert|%>
+        <div class="card-product-profile">
+          <%if alert.institution.present?%>
+            <%=image_tag alert.institution.photo_url %>
+          <% else %>
+            <%= image_tag alert.area.photo_url %>
+          <% end %>
+          <div class="card_product_infos">
+            <%if alert.institution.present? && alert.institution.present? %>
+              <p><strong><%=alert.institution.name  %></strong></p>
+              <h2><%= alert.area.name %></h2>
+            <% elsif alert.institution.present? %>
+              <p><strong><%=alert.institution.name  %></strong></p>
             <% else %>
-              <%= image_tag alert.area.photo_url %>
-            <% end %>
-            <div class="card_product_infos">
-              <%if alert.institution.present? && alert.institution.present? %>
-                <p><strong><%=alert.institution.name  %></strong></p>
-                <h2><%= link_to alert.area.name, scholarships_path %></h2>
-              <% elsif alert.institution.present? %>
-                <p><strong><%=alert.institution.name  %></strong></p>
-              <% else %>
-                <h2><%= link_to alert.area.name, scholarships_path %></h2>
-              <% end %>
+              <h2><%= alert.area.name %></h2>
 
-              <% if alert.unread_notifications? %>
-                 <%=  link_to pluralize(alert.notifications.count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
-              <% end %>
+            <% end %>
+           
+
+
+            <% if alert.unread_notifications? %>
+               <%=  link_to pluralize(alert.unread_notif_count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
+            <% end %>
+
 
               <div class="icon" id="icon-trash">
               <%= link_to alert_path(alert), method: :delete do %>
@@ -85,8 +92,9 @@
   </div>
 
  <div class="col-xs-8 col-sm-4">
-    <h2>My Profile</h2>
-    <div class="personal-infor">
+
+    <div class="personal-info">
+      <h1>My Profile</h1>
         <div class="card-product1">
           <div class="card_product_infos">
             <ul>
@@ -100,9 +108,11 @@
           </div>
         </div>
       </div>
-       <div class="icon">
+       <div class="icon-pencil">
           <%= link_to edit_user_registration_path do %>
+          <i class="color-fas-pencil-alt">
           <i class="fas fa-pencil-alt"></i>
+          </i>
           <% end %>
       </div>
     </div>
