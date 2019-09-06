@@ -45,7 +45,7 @@
             <% end %>
 
             <% if alert.unread_notifications? %>
-               <%=  link_to pluralize(alert.notifications.count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
+               <%=  link_to pluralize(alert.unread_notif_count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
             <% end %>
 
           </div>
