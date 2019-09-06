@@ -37,7 +37,7 @@ class AlertsController < ApplicationController
 
   def change_notification_status
     scholarships = []
-    @alert.notifications.each do |notification|
+    @alert.notifications.where(status: "unread").each do |notification|
       notification.status = "read"
       notification.save
       scholarships << notification.scholarship_id.to_i

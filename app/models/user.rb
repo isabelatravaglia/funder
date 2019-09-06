@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :favorite_scholarships, through: :favorites, source: :favorited, source_type: 'Scholarship'
   has_many :institutions, dependent: :destroy
   has_many :alerts, dependent: :destroy
+  has_many :notifications, through: :alerts
 
   validates :first_name, presence: true, on: :update
   validates :last_name, presence: true, on: :update
