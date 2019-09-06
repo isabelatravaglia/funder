@@ -8,16 +8,24 @@
 
 
       <%current_user.favorites.each do |favorite| %>
-      <% scholarship = Scholarship.find(favorite.favorited_id) %>
-        <div class="card-product">
-          <%=image_tag scholarship.institution.photo_url %>
-          <div class="card_product_infos">
-            <h2><%= link_to scholarship.name, scholarship_path(scholarship.id) %></h2>
-            <p>Aplication starts: <%=scholarship.application_start_date%></p>
-            <p>Deadline: <%=scholarship.application_end_date %></p>
+        <% scholarship = Scholarship.find(favorite.favorited_id) %>
+          <div class="card-product">
+            <%=image_tag scholarship.institution.photo_url %>
+            <div class="card_product_infos" id='<%= favorite.favorited.id %>' >
+              <h2><%= link_to scholarship.name, scholarship_path(scholarship.id) %></h2>
+              <p>Aplication starts: <%=scholarship.application_start_date%></p>
+              <p>Deadline: <%=scholarship.application_end_date %></p>
+
+              <%= link_to favorite_path(favorite), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+
+              <%#= icon(current_user.likes?(favorite.favorited) ? "fas color-fas" : "far color-far" , "heart") %>
+            </div>
+
+
           </div>
-        </div>
-      <% end%>
+        <% end %>
       </div>
     </div>
   </div>
@@ -29,6 +37,7 @@
 
       <%@sorted_alerts.each do |alert|%>
         <div class="card-product">
+
           <%if alert.institution.present?%>
             <%=image_tag alert.institution.photo_url %>
           <% else %>
@@ -46,6 +55,10 @@
 
             <% if alert.unread_notifications? %>
                <%=  link_to pluralize(alert.notifications.count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
+            <% end %>
+
+            <%= link_to alert_path(alert), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
             <% end %>
 
           </div>

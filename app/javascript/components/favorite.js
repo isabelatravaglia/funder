@@ -22,6 +22,7 @@ const toggleIcons = function() {
         }).then(() => toggleIcon(icon))
 
       } else if (icon.classList.contains('fas')) {
+        console.log(scholarshipId)
         fetch(`/favorite_scholarships/${scholarshipId}`, {
           method: 'delete',
           body: JSON.stringify({scholarship_id: scholarshipId}),
