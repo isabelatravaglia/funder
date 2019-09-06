@@ -12,7 +12,10 @@ class Notification < ApplicationRecord
 
     alert_from_notification.notif_count = alert_from_notification.notifications.count
 
+    alert_from_notification.unread_notif_count = alert_from_notification.notifications.where(status: "unread").count
+
     alert_from_notification.save
+
     puts "added #{alert_from_notification.notifications.count} notification on alert #{self.alert.id}. Alert notifications were #{alert_from_notification.notif_count}"
   end
 end
