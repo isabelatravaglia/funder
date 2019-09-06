@@ -40,13 +40,10 @@ class AlertsController < ApplicationController
     @alert.notifications.each do |notification|
       notification.status = "read"
       notification.save
-      scholarships << notification.scholarship_id
+      scholarships << notification.scholarship_id.to_i
     end
-    scholarships.reject { |x| x.nil? }
-    params = {scholarship: scholarships}.to_query
-    # query = Scholarship.where(id: scholarships)
-    redirect_to scholarships_path({query: params})
-    # redirect_to scholarships_path(params:'407')
+    notifications = scholarships
+    redirect_to scholarships_path(notifications: notifications)
   end
 
   private
