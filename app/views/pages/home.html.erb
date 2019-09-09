@@ -24,15 +24,59 @@
 </div>
 
 <%= render 'shared/search_results' %>
-<div class="downArrow bounce sm-12 md-6 lg-4">
-  <img width="50px" height="50px" alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4=" />
 
+
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <a href="#areas">
+  <h5>Search for scholarships by areas</h5>
+  <i class="fas fa-chevron-down icon-arrow"></i>
+  </a>
 </div>
 
-<div class="row">
+<div class="mySlides">
+  <%= link_to scholarships_path do%>
+  <h5>See all the scholarships available</h5>
+  <i class="fas fa-list icon-list"></i>
+  <% end %>
+</div>
+
+<div class="mySlides">
+  <%= link_to new_user_registration_path do %>
+  <h5>Create a free account, so you can...</h5>
+  <i class="fas fa-check icon-check"></i>
+  <% end %>
+</div>
+
+<div class="mySlides">
+  <%= link_to scholarships_path do%>
+  <h5>...mark scholarships as favorites </h5>
+  <i class="fas fa-heart color-far icon-heart"></i>
+  <% end %>
+</div>
+
+<div class="mySlides">
+  <%= link_to user_path(:id) do%>
+  <h5>and set-up alerts, for not missing anything.</h5>
+  <i class="fas fa-bell icon-bell"></i>
+  <% end %>
+</div>
+
+<div class="mySlides">
+  <h5>Discover more with a premium account</h5>
+  <i class="fas fa-star icon-star"></i>
+</div>
+
+<a class="prev">❮</a>
+<a class="next">❯</a>
+</div>
+
+
+<div id="areas" class="row">
 
   <% @areas.each do |area|  %>
-    <div class="col-sm-12 col-md-6 col-lg-4 filter">
+    <div  class="col-sm-12 col-md-6 col-lg-4 filter">
       <%= link_to scholarships_path({query: area.name}) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path area.photo %>')">
         <%= area.name %>
