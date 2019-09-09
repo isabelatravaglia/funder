@@ -12,19 +12,19 @@
     <% if user_signed_in? %>
       <div>
         <li class="login-banner">
-          <%= link_to "Log out", destroy_user_session_path , method: :delete, class: "btn btn-outline-secondary" %>
+          <%= link_to "Log out", destroy_user_session_path , method: :delete, class: "btn btn-outline-light" %>
         </li>
       </div>
 
     <% else %>
       <div>
         <li class="sign-up-banner">
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-secondary" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-light" %>
         </li>
       </div>
       <div>
         <li class="login-banner">
-          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light" %>
         </li>
       </div>
     <% end %>
