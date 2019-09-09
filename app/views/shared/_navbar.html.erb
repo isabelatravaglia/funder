@@ -1,11 +1,20 @@
 <div class="<%= navbar_classes %>">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567530182/logo_funder/logo_funder_badge_b7pgdp.png" %>
+
+
+  <%# if not params[:controller] == "pages"  %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567530182/logo_funder/logo_funder_badge_b7pgdp.png" %>
     <% end %>
+  <%# end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+
+  <%# if not params[:controller] == "pages"  %>
+    <%= render 'shared/search_form' %>
+  <%# end %>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
