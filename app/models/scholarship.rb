@@ -12,7 +12,11 @@ class Scholarship < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name_institution_and_area,
-  against: [:name, :institution_id, :area_id, :id],
+  against: [:name, :id],
+  associated_against: {
+    institution: [:name],
+    area: [:name]
+  },
   using: {
       tsearch: { prefix: true }
     }
