@@ -1,3 +1,5 @@
+import Noty from 'noty';
+
 const toggleIcons = function() {
   const icons = document.querySelectorAll('.site-content i')
 
@@ -19,7 +21,17 @@ const toggleIcons = function() {
             'X-CSRF-Token': Rails.csrfToken()
           },
           credentials: 'same-origin'
-        }).then(() => toggleIcon(icon))
+        }).then(() => toggleIcon(icon),
+        new Noty({
+          type: 'success',
+          layout: 'bottomRight',
+          text: 'Favorite created!',
+          theme: 'semanticui',
+          timeout: 3000
+        }
+          ).show()
+        )
+
 
       } else if (icon.classList.contains('fas')) {
         console.log(scholarshipId)
@@ -31,7 +43,16 @@ const toggleIcons = function() {
             'X-CSRF-Token': Rails.csrfToken()
           },
           credentials: 'same-origin'
-        }).then(() => toggleIcon(icon))
+        }).then(() => toggleIcon(icon),
+          new Noty({
+          type: 'warning',
+          layout: 'bottomRight',
+          text: 'Favorite deleted!',
+          theme: 'semanticui',
+          timeout: 3000
+        }
+          ).show()
+        )
       }
     })
   })
