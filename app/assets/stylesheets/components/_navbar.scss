@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
+.all-navbar {
+  position: relative;
+}
+
+.search-form {
+  position: absolute;
+  left: 50px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #ffd1b3;
