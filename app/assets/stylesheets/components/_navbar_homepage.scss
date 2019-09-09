@@ -1,0 +1,9 @@
+.navbar-homepage {
+  // visibility: hidden;
+  display: none;
+
+
+  &.navbar-lewagon-show {
+    display: flex;
+  }
+}

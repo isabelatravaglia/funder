@@ -14,12 +14,8 @@
   <body>
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
-      <% if params[:controller] == "pages" %>
-        <div class="homepage-content">
-      <% else %>
-        <div class="site-content">
-      <% end %>
-      <%= yield %>
+      <div class="<%= content_classes %>">
+        <%= yield %>
       </div>
       <%= render 'shared/footer' %>
       <%= javascript_include_tag 'application' %>
