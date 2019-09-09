@@ -21,8 +21,8 @@
           <div class="card_product_infos" id="<%= result.id %>">
              <%= icon(current_user.likes?(result) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
             <h2><%= result.name %></h2>
-            <h2><%= result.institution.name %></h2>
-            <p><%= result.description %></p>
+            <h4><%= result.institution.name %></h4>
+            <p><%= truncate(result.description, length: 15) %></p>
           </div>
           <%= link_to '', result, class: 'card-link' %>
         </div>
@@ -51,8 +51,8 @@
             <% end %>
 
             <h2><%= result.name %></h2>
-            <h2><%= result.institution.name %></h2>
-            <p><%= result.description %></p>
+            <h4><%= result.institution.name %></h4>
+            <p><%= truncate(result.description, length: 80) %></p>
           </div>
           <%= link_to '', scholarship_path(result), class: 'card-link' %>
         </div>

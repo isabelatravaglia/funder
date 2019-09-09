@@ -10,7 +10,7 @@ TYPES = ["Research of ", "PhD of "]
 
 puts "Creating user admin"
 url_admin = "https://res.cloudinary.com/veronicabraga/image/upload/v1567519066/institutions/User%20avatar/photo-1507003211169-0a1dd7228f2d_a5w1nr.jpg"
-admin = User.new(email: "admin@funder.com", first_name: "Admin", last_name: "Admin", role: "admin", degree: "admin", nationality: "admin", area: "admin", date_of_birth: Date.new(2019,1,1), gender: "female", country: "Portugual", password: "123456", admin: true)
+admin = User.new(email: "mariana@gmail.com", first_name: "Mariana", last_name: "Ferreira", role: "admin", degree: "Master", nationality: "Portuguese", area: "Economics", date_of_birth: Date.new(2019,1,1), gender: "female", country: "Portugal", password: "123456", admin: true)
 admin.remote_photo_url = url_admin
 admin.save
 
@@ -128,7 +128,17 @@ max_inst = Institution.last.id
 30.times do
   area = Area.find(rand(min_area..max_area))
   type = TYPES.sample
-  description = "Scholarship for #{type}#{area.name}"
+
+  if area.name == "Economics"
+    description = "The breadth and depth of our expertise enables us to offer supervision in all major areas of economics and finance. The School has more than 40 research-active faculty working in a wide range of research areas, including macroeconomics, microeconomic theory and game theory, applied microeconomics, econometric theory, time series analysis, theoretical and empirical finance."
+  elsif area.name == "Management"
+    description = "We are actively engaged in conducting research on a wide range of relevant issues relating to leadership, ethics, organisation studies, human resource management and development, employment relations, sales management, advertising, operations research, organisational excellence, and corporate branding at this Operations and Systems Management."
+  else
+    description = "Scholarships support graduates who comply with the requirements to apply for PhD studies and wish to carry out research towards this degree. Research work may be carried out in any knowledge intensive environment, namely in collaboration with companies. The work programme may be entirely or partially carried out in a national institution (national or mixed scholarships, respectively), or in a foreign institution (overseas scholarships). For mixed scholarships, the period of the work programme that takes place in a foreign institution cannot exceed a total of two years. As a rule, scholarships are annual, and can be renewed for the number of moths for which they have been requested. No scholarships are granted for periods of less than three consecutive months or more than 48 months."
+
+    # "Scholarship for #{type}#{area.name}"
+  end
+
   start_date = Date.new(rand(2019..2021), rand(1..12), rand(1..28))
   end_date = start_date + 60
   institution = Institution.find(rand(min_inst..max_inst))
