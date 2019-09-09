@@ -8,11 +8,26 @@
     <img class="full-logo" src= "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567530191/logo_funder/logo_funder_word_uk7nqh.png">
 
 
-    <div>
-      <li class="login-banner">
-        <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
-      </li>
-    </div>
+
+    <% if user_signed_in? %>
+      <div>
+        <li class="login-banner">
+          <%= link_to "Log out", destroy_user_session_path , method: :delete, class: "btn btn-outline-secondary" %>
+        </li>
+      </div>
+
+    <% else %>
+      <div>
+        <li class="sign-up-banner">
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-secondary" %>
+        </li>
+      </div>
+      <div>
+        <li class="login-banner">
+          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
+        </li>
+      </div>
+    <% end %>
 
     <div class="tag-line col-12 text-center">
       <h1>Your funding finder</h1>
