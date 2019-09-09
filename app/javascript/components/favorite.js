@@ -4,15 +4,15 @@ const toggleIcons = function() {
   const icons = document.querySelectorAll('.site-content i')
 
   const toggleIcon = function(icon) {
-    icon.classList.toggle('far');
-    icon.classList.toggle('fas');
+    icon.classList.toggle('heart-fav');
+    icon.classList.toggle('heart-fas');
   }
 
   icons.forEach((icon) => {
     const scholarship = icon.parentElement
     const scholarshipId = scholarship.id
     icon.addEventListener('click', () => {
-      if (icon.classList.contains('far')) {
+      if (icon.classList.contains('heart-fav')) {
         fetch('/favorite_scholarships', {
           method: 'post',
           body: JSON.stringify({scholarship_id: scholarshipId}),
@@ -33,7 +33,7 @@ const toggleIcons = function() {
         )
 
 
-      } else if (icon.classList.contains('fas')) {
+      } else if (icon.classList.contains('heart-fas')) {
         console.log(scholarshipId)
         fetch(`/favorite_scholarships/${scholarshipId}`, {
           method: 'delete',
