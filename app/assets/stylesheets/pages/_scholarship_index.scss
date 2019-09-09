@@ -4,9 +4,8 @@
   margin: 150px 12%;
   background: #e7e4e4;
   border-radius: 6px;
-  padding: 25px;
-
-
+  padding: 20px;
+  position: relative;
 }
 
 .index-page h1 {
@@ -14,8 +13,23 @@
   font-size: 32px;
   font-weight: bold;
   color: #4d4d4d;
-  margin-left: 100px;
+  margin-left: 150px;
   margin-top: 20px;
-  margin-bottom: 20px;
 
 }
+
+.index-page h6 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  color: #4d4d4d;
+  margin-left: 150px;
+  margin-top: 10px;
+
+}
+
+.row {
+  margin-top: 50px;
+}
+
+

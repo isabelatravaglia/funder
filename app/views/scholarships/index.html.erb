@@ -1,15 +1,13 @@
 
 
 <div class="index-page">
-  <%= link_to(scholarships_path) do %> <h1> See all Scholarships </h1> <% end %>
 
-  <% if user_signed_in? %>
-    <div class="row">
-      <% @results.each do |result|%>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+  <h1>See all Scholarships </h1>
 
-        <div class="card-product">
-
+  <% if @results.empty? %>
+    <h6><%= "Sorry, these scholarships don't exist in this plataform." %></h6>
+  <% else %>
+  
             <%= image_tag cl_image_path result.institution.photo %>
 
           <div class="card_product_infos" id="<%= result.id %>">
@@ -21,17 +19,30 @@
           <%= link_to '', result, class: 'card-link' %>
         </div>
 
+    <% if user_signed_in? %>
+      <div class="row">
+        <% @results.each do |result|%>
+        <div class="col-sm-12 col-md-6 col-lg-6">
 
+          <div class="card-product list-cards">
 
+              <%= image_tag cl_image_path result.institution.photo %>
 
+            <div class="card_product_infos" id="<%= result.id %>">
+               <%= icon(current_user.likes?(result) ? "fas color-fas" : "far color-far" , "heart") %>
+              <h2><%= result.name %></h2>
+              <h2><%= result.institution.name %></h2>
+              <p><%= result.description %></p>
+            </div>
+            <%= link_to '', result, class: 'card-link' %>
+          </div>
 
         <br>
 
-    </div>
+        </div>
      <br>
-    <% end %>
+      <% end %>
     </div>
-
 
     <% else %>
 
@@ -40,7 +51,7 @@
       <% @results.each do |result|%>
       <div class="col-sm-12 col-md-6 col-lg-6">
 
-        <div class="card-product">
+        <div class="card-product list-cards">
           <%= image_tag result.institution.photo_url %>
 
 
@@ -60,6 +71,7 @@
       <br>
       <% end %>
     </div>
+  <% end %>
   <% end %>
 </div>
 
