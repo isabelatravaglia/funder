@@ -2,7 +2,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/ddec9kvgc/image/upload/v1567592368/banner_image/450357941_f9b8c99588_o_zkqw8g.jpg);">
 
 
+
   <div class="row">
+
+    <img class="full-logo" src= "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567530191/logo_funder/logo_funder_word_uk7nqh.png">
+
+
+    <div>
+      <li class="login-banner">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
+      </li>
+    </div>
+
     <div class="tag-line col-12 text-center">
       <h1>Your funding finder</h1>
       <h3>Find a scholarship to support your PhD studies in Europe</h3>
@@ -24,6 +35,9 @@
 </div>
 
 <%= render 'shared/search_results' %>
+
+
+ 
 
 
 <div class="slideshow-container">
