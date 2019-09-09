@@ -7,7 +7,17 @@
   <% if @results.empty? %>
     <h6><%= "Sorry, these scholarships don't exist in this plataform." %></h6>
   <% else %>
+  
+            <%= image_tag cl_image_path result.institution.photo %>
 
+          <div class="card_product_infos" id="<%= result.id %>">
+             <%= icon(current_user.likes?(result) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
+            <h2><%= result.name %></h2>
+            <h2><%= result.institution.name %></h2>
+            <p><%= result.description %></p>
+          </div>
+          <%= link_to '', result, class: 'card-link' %>
+        </div>
 
     <% if user_signed_in? %>
       <div class="row">

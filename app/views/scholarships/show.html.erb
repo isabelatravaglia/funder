@@ -16,7 +16,13 @@
         <h2><%= @scholarship.name %></h2>
         <h3><%= @scholarship.institution.name %></h3>
         <h4><%= @scholarship.area.name %></h4>
-        <p><i class="far fa-calendar-alt"> Application: </i> <%= @scholarship.application_start_date %> / <%= @scholarship.application_end_date %>  </p>
+
+        <div class="application">
+          <ul>
+            <li><i class="far fa-calendar-alt"></i></li>
+            <li>Application: <%= @scholarship.application_start_date %> / <%= @scholarship.application_end_date %></li>
+          </ul>
+        </div>
 
       </div>
 
@@ -36,7 +42,7 @@
 
     <div id='<%= @scholarship.id %>' class="hearth-icon" >
       <% if user_signed_in? %>
-        <%= icon(current_user.likes?(@scholarship) ? "fas color-fas" : "far color-far" , "heart") %>
+        <%= icon(current_user.likes?(@scholarship) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
       <% else %>
        <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
           <i class="far fa-heart color-far"></i>
