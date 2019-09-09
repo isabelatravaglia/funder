@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: 'pages#home'
-  patch '/alerts/:id', to: 'alerts#change_notification_status', as: 'change_notification_status'
+  patch '/alerts/change/:id', to: 'alerts#change_notification_status', as: 'change_notification_status'
   resources :users, only: [:index, :show, :edit]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :institutions

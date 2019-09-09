@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-sm-12 col-lg-6">
       <h2>Edit Alert</h2>
-      <%= simple_form_for @alert do |f| %>
+      <%= simple_form_for @alert, method: :patch do |f| %>
 
         <% if @alert.errors.any? %>
          <div class="alert alert-danger">
