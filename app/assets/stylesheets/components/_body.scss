@@ -12,10 +12,10 @@ body {
 
 
 .site-content {
-  margin-top: 50px;
   min-height: calc(100vh - 120px);
   font-family: 'Roboto', sans-serif;
   margin-top: 60px;
+
   h2{
     color: #4d4d4d
   }
@@ -24,6 +24,9 @@ body {
   }
   a {
     text-decoration: none;
+  }
+  .site-content-homepage {
+    margin-top: 0;
   }
 }
 
@@ -38,4 +41,3 @@ body {
 
   margin: 0 8%;
 }
-
