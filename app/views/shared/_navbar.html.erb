@@ -6,11 +6,11 @@
   <div class="<%= navbar_classes %>">
 
 
-    <%# if not params[:controller] == "pages"  %>
+
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567530182/logo_funder/logo_funder_badge_b7pgdp.png" %>
       <% end %>
-    <%# end %>
+
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -73,6 +73,9 @@
             </div>
           </li>
         <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>

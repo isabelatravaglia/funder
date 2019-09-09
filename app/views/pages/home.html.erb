@@ -18,6 +18,11 @@
 
     <% else %>
       <div>
+        <li class="sign-up-banner">
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-secondary" %>
+        </li>
+      </div>
+      <div>
         <li class="login-banner">
           <%= link_to "Login", new_user_session_path, class: "btn btn-outline-secondary" %>
         </li>
