@@ -57,8 +57,8 @@
 
           <div class="card_product_infos">
             <%if alert.institution.present? && alert.area.present? %>
-              <p><strong><%=alert.institution.name  %></strong></p>
               <h2><%= alert.area.name %></h2>
+              <p><strong><%=alert.institution.name  %></strong></p>
             <% elsif alert.institution.present? %>
               <p><strong><%=alert.institution.name  %></strong></p>
             <% else %>
