@@ -58,12 +58,15 @@
 
 }
 
-.hearth-icon {
+.heart-icon {
   position: absolute;
   top: 285px;
   right: 22px;
   font-size: 25px;
-  color: black;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .infos-name {

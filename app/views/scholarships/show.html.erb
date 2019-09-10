@@ -41,7 +41,7 @@
 
 
 
-    <div id='<%= @scholarship.id %>' class="hearth-icon" >
+    <div id='<%= @scholarship.id %>' class="heart-icon" >
       <% if user_signed_in? %>
         <%= icon(current_user.likes?(@scholarship) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
       <% else %>
