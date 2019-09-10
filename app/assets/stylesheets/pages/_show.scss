@@ -22,7 +22,7 @@ text-decoration: none;
 
 #icon-plus {
   right: 40px;
-  top: 50px;
+  top: 35px;
 
 }
 
@@ -34,13 +34,19 @@ text-decoration: none;
   right: 27px;
 }
 
+#icon-trash-fav {
+
+  right: 8px;
+}
+
 #icon-pencil-profile {
   right: 30px;
-  top: 50px;
+  top: 137px;
 }
 
 .row {
-  margin: 150px 12%;
+  margin: 150px 6%;
+  margin-top: 150px;
 
 
 }
@@ -50,16 +56,19 @@ text-decoration: none;
 }
 
 .favorites {
+  position: relative;
   background: #e7e4e4;
   border-radius: 6px;
   padding: 25px;
+  margin-top: 100px;
 
   h1 {
     font-family: "Roboto", sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     color: #4d4d4d;
     margin-top: 8px;
     margin-bottom: 20px;
+    margin-left: 30px;
   }
 
 }
@@ -67,7 +76,7 @@ text-decoration: none;
 
   overflow: hidden;
   height: 90px;
-  width: 290px;
+  width: 350px;
   background: #f2f2f2;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -91,7 +100,7 @@ text-decoration: none;
   margin-top: 8px;
 }
 
-.card-product-profile .card_product_infos {
+.card-product-profile .card_product_profile_infos {
   padding: 16px;
 
 }
@@ -107,26 +116,35 @@ text-decoration: none;
 
 }
 
+.card-product-profile .card_product_profile_infos h2 {
+
+  padding-right: 25px;
+
+}
 
 .card-product1 {
   height: 500px;
-  background: #eae9e9;
+  background: #f0eded;
   border-radius: 6px;
   padding: 25px;
 }
 
 .personal-info {
 
+  position: relative;
   background: #e7e4e4;
   border-radius: 6px;
   padding: 25px;
+  margin-top: 100px;
 
   h1 {
     font-family: "Roboto", sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     color: #4d4d4d;
     margin-top: 8px;
     margin-bottom: 20px;
+    margin-left: 30px;
+
   }
 
 
@@ -141,11 +159,11 @@ text-decoration: none;
 
 .card-product1 li h5 {
   font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 18px;
   color: #4d4d4d;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-weight: lighter;
 }
 
 .card-profile-link {
@@ -155,6 +173,37 @@ text-decoration: none;
   right: 0px;
   width: 100%;
   z-index: 2;
+}
+
+#icon-heart-fav {
+  position: absolute;
+  left:25px;
+  top: 6%;
+  font-size: 20px;
+  color: #f8a978;
+  font-weight: bold;
+}
+
+#icon-bell-alerts {
+
+  position: absolute;
+  left:25px;
+  top: 6%;
+  font-size: 20px;
+  color: #f8a978;
+  font-weight: bold;
+
+}
+
+#user-icon {
+
+  position: absolute;
+  left:25px;
+  top: 6%;
+  font-size: 20px;
+  color: #f8a978;
+  font-weight: bold;
+
 }
 
 
