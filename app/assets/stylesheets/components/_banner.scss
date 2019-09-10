@@ -27,12 +27,53 @@
   font-family: "Roboto", sans-serif;
 }
 
-.login-banner {
+#photo-user {
+
   position: absolute;
   top: 30px;
   right: 20px;
   list-style-type: none;
   text-decoration: none;
+
+}
+#bell-icon a {
+
+  position: absolute;
+  top: 40px;
+  right: 70px;
+  list-style-type: none;
+  text-decoration: none;
+  text-decoration: none;
+  font-size: 14px;
+  color: #f8a978;
+  &:hover {
+    opacity: 0.5;
+  }
+
+
+}
+
+#profile-link a {
+  position: absolute;
+  top: 40px;
+  right: 95px;
+  list-style-type: none;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #f3f1f1;
+  text-decoration: none;
+  &:hover {
+    color: #595959;
+  }
+}
+
+.login-banner {
+ position: absolute;
+ top: 30px;
+ right: 20px;
+ list-style-type: none;
+ text-decoration: none;
 }
 
 .sign-up-banner {
