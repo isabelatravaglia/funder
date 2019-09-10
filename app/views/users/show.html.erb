@@ -8,113 +8,111 @@
       <div class="favorite">
 
 
-      <%current_user.favorites.each do |favorite| %>
+        <%current_user.favorites.each do |favorite| %>
+          <% scholarship = Scholarship.find(favorite.favorited_id) %>
+          <div class="card-product-profile">
 
+            <%=image_tag scholarship.institution.photo_url %>
+            <div class="card_product_infos">
+              <h2><%= scholarship.name%></h2>
+              <p>Aplication starts: <%=scholarship.application_start_date%></p>
+              <p>Deadline: <%=scholarship.application_end_date %></p>
+            </div>
 
-
-      <% scholarship = Scholarship.find(favorite.favorited_id) %>
-        <div class="card-product-profile">
-
-          <%=image_tag scholarship.institution.photo_url %>
-          <div class="card_product_infos">
-            <h2><%= scholarship.name%></h2>
-            <p>Aplication starts: <%=scholarship.application_start_date%></p>
-            <p>Deadline: <%=scholarship.application_end_date %></p>
-
+            <div class="icon">
+              <%= link_to favorite_path(favorite), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+            <%= link_to '', scholarship_path(scholarship.id), class: 'card-profile-link' %>
           </div>
-
-          <div class="icon">
-            <%= link_to favorite_path(favorite), method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </div>
-          <%= link_to '', scholarship_path(scholarship.id), class: 'card-profile-link' %>
-        </div>
-      <% end%>
+        <% end%>
 
       </div>
     </div>
   </div>
 
-    <div class="col-xs-8 col-sm-4">
+  <div class="col-xs-8 col-sm-4">
 
     <div class="favorites">
       <h1>My Alerts</h1>
       <div class="favorite">
 
         <div class="icon" id="icon-plus">
-          <%= link_to new_alert_path do %>
-            <i class="fas fa-plus"></i>
+          <%= link_to '#newAlert', 'data-toggle' => "modal" do %>
+            <i class="fas fa-plus" ></i>
           <% end %>
         </div>
 
+        <%= render "/alerts/new", alert: Alert.new %>
 
 
-      <%@sorted_alerts.each do |alert|%>
+        <%@sorted_alerts.each do |alert|%>
         <div class="card-product-profile">
           <%if alert.institution.present?%>
             <%=image_tag alert.institution.photo_url %>
           <% else %>
             <%= image_tag alert.area.photo_url %>
           <% end %>
+
           <div class="card_product_infos">
-            <%if alert.institution.present? && alert.institution.present? %>
+            <%if alert.institution.present? && alert.area.present? %>
               <p><strong><%=alert.institution.name  %></strong></p>
               <h2><%= alert.area.name %></h2>
             <% elsif alert.institution.present? %>
               <p><strong><%=alert.institution.name  %></strong></p>
             <% else %>
               <h2><%= alert.area.name %></h2>
-
             <% end %>
 
 
 
             <% if alert.unread_notifications? %>
-               <%=  link_to pluralize(alert.unread_notif_count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
+              <%=  link_to pluralize(alert.unread_notif_count, 'new notification'), change_notification_status_path(alert.id), method: :patch %>
             <% end %>
-              <div class="icon" id="icon-trash">
+            <div class="icon" id="icon-trash">
               <%= link_to alert_path(alert), method: :delete do %>
                 <i class="fas fa-trash-alt"></i>
               <% end %>
-              </div>
-              <div class="icon" id="icon-pencil">
-                <%= link_to edit_alert_path(alert) do %>
-                <i class="fas fa-pencil-alt"></i>
-                <% end %>
-              </div>
-
             </div>
+            <div class="icon" id="icon-pencil">
+              <%= link_to "#edit_alert_#{alert.id}", 'data-toggle' => "modal" do %>
+                <i class="fas fa-pencil-alt"></i>
+              <% end %>
+            </div>
+            <%= render "/alerts/edit", alert: alert %>
+
           </div>
+        </div>
         <% end%>
       </div>
     </div>
   </div>
 
- <div class="col-xs-8 col-sm-4">
+  <div class="col-xs-8 col-sm-4">
 
     <div class="personal-info">
       <h1>My Profile</h1>
-        <div class="card-product1">
-          <div class="card_product_infos">
-            <ul>
-              <li><h5>Full Name: <%=@user.first_name%> <%=@user.last_name%> </h5></li>
-              <li> <h5>Your area of study: <%=@user.area%></h5></li>
-              <li> <h5>Nationality: <%=@user.nationality%></h5></li>
-              <li> <h5>Country: <%=@user.country%></h5></li>
-              <li> <h5>Date of birth: <%=@user.date_of_birth%></h5></li>
-              <li> <h5>Gender: <%=@user.gender%></h5></li>
-            </ul>
-          </div>
+      <div class="card-product1">
+        <div class="card_product_infos">
+          <ul>
+            <li><h5>Full Name: <%=@user.first_name%> <%=@user.last_name%> </h5></li>
+            <li> <h5>Your area of study: <%=@user.area%></h5></li>
+            <li> <h5>Nationality: <%=@user.nationality%></h5></li>
+            <li> <h5>Country: <%=@user.country%></h5></li>
+            <li> <h5>Date of birth: <%=@user.date_of_birth%></h5></li>
+            <li> <h5>Gender: <%=@user.gender%></h5></li>
+          </ul>
         </div>
       </div>
-       <div class="icon" id="icon-pencil-profile">
-          <%= link_to edit_user_registration_path do %>
-          <i class="color-fas-pencil-alt">
-          <i class="fas fa-pencil-alt"></i>
-          </i>
-          <% end %>
-      </div>
     </div>
-
+    <div class="icon" id="icon-pencil-profile">
+      <%= link_to edit_user_registration_path do %>
+      <i class="color-fas-pencil-alt">
+        <i class="fas fa-pencil-alt"></i>
+      </i>
+      <% end %>
+    </div>
   </div>
+
+</div>

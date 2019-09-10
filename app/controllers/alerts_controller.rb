@@ -13,7 +13,7 @@ class AlertsController < ApplicationController
       redirect_to user_path(current_user), notice: "Alert created!"
     else
       load_areas_institutions
-      render :new
+      redirect_to user_path(current_user), notice: "Couldn't create alert. Please provide a name for the alert and choose an Area or an Institution."
     end
   end
 
@@ -26,7 +26,7 @@ class AlertsController < ApplicationController
       redirect_to user_path(current_user), notice: "Alert updated!"
     else
       load_areas_institutions
-      render :new
+      redirect_to user_path(current_user), notice: "Couldn't update alert. Please provide a name for the alert and choose an Area or an Institution."
     end
   end
 
