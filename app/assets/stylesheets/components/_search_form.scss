@@ -1,13 +1,15 @@
+@include media-breakpoint-up(md) {
+
 
 .search-form {
   width: 500px;
   margin-left: 15px;
   #query{
     width: 250px;
-  }
+    }
 
   }
-
+}
 // .form-control:focus {
 //   color: #ffd1b3;
 // }
