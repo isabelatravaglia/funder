@@ -9,8 +9,8 @@ Notification.destroy_all
 TYPES = ["Research of ", "PhD of "]
 
 puts "Creating user admin"
-url_admin = "https://res.cloudinary.com/veronicabraga/image/upload/v1567519066/institutions/User%20avatar/photo-1507003211169-0a1dd7228f2d_a5w1nr.jpg"
-admin = User.new(email: "mariana@gmail.com", first_name: "Mariana", last_name: "Ferreira", role: "admin", degree: "Master", nationality: "Portuguese", area: "Economics", date_of_birth: Date.new(2019,1,1), gender: "female", country: "Portugal", password: "123456", admin: true)
+url_admin = "https://res.cloudinary.com/veronicabraga/image/upload/v1568108987/Funder/christopher-campbell-rDEOVtE7vOs-unsplash_hj9qpu.jpg"
+admin = User.new(email: "mariana@gmail.com", first_name: "Mariana", last_name: "Ferreira", role: "admin", degree: "Master", nationality: "Portuguese", area: "Economics", date_of_birth: Date.new(1989,4,15), gender: "female", country: "Portugal", password: "123456", admin: true)
 admin.remote_photo_url = url_admin
 admin.save
 

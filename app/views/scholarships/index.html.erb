@@ -22,7 +22,8 @@
              <%= icon(current_user.likes?(result) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
             <h2><%= result.name %></h2>
             <h4><%= result.institution.name %></h4>
-            <p><%= truncate(result.description, length: 15) %></p>
+            <h4><%= result.institution.country %></h4>
+            <p><%= truncate(result.description, length: 80) %></p>
           </div>
           <%= link_to '', result, class: 'card-link' %>
         </div>
@@ -52,6 +53,7 @@
 
             <h2><%= result.name %></h2>
             <h4><%= result.institution.name %></h4>
+            <h4><%= result.institution.country %></h4>
             <p><%= truncate(result.description, length: 80) %></p>
           </div>
           <%= link_to '', scholarship_path(result), class: 'card-link' %>
