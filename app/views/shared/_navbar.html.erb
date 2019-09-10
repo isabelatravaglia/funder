@@ -29,15 +29,17 @@
             <%= link_to "Profile", user_path(current_user)%>
           </li>
           <li class="nav-item">
-            <div class="notification-bell d-flex">
+            <div class="notification-bell">
               <% if current_user.notifications.where(status:"unread").count >0 %>
-              <i class="color-fas-bell">
-                <i class="fas fa-bell"></i>
-                </i>
+
+                  <%= link_to user_path(current_user) do %>
+                    <i class="fas fa-bell color-fas-bell"></i>
+                  <% end %>
+
               <% else %>
-              <i class="color-far-bell">
-                <i class="far fa-bell color-far-bell"></i>
-              </i>
+
+                  <i class="far fa-bell color-far-bell"></i>
+
               <% end %>
             </div>
           </li>
