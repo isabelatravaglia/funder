@@ -47,9 +47,12 @@ text-decoration: none;
 .row {
   margin: 150px 6%;
   margin-top: 150px;
-
-
 }
+
+.row-no-mb {
+  margin-bottom: 40px;
+}
+
 .favorite {
   overflow-y: scroll;
   height: 500px;

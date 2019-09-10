@@ -96,49 +96,55 @@
 <%= render 'shared/search_results' %>
 
 
+<div class="slideshow-container row row-no-mb">
+  <div class="mySlides col-sm-12">
+    <a href="#areas">
+    <h5>
+      <i class="fas fa-chevron-down icon-arrow icon-slide"></i>
+      Search for scholarships by areas
+    </h5>
+    </a>
+  </div>
+
+  <div class="mySlides col-sm-12">
+    <%= link_to scholarships_path do%>
+    <h5>
+      <i class="fas fa-list icon-list icon-slide"></i>
+      See all the scholarships available
+    </h5>
+    <% end %>
+  </div>
+
+  <div class="mySlides col-sm-12">
+    <%= link_to new_user_registration_path do %>
+    <h5>
+      <i class="fas fa-check icon-check icon-slide"></i>
+      Create an account, so you can...
+    </h5>
+    <% end %>
+  </div>
+
+  <div class="mySlides col-sm-12">
+    <%= link_to scholarships_path do%>
+    <h5>
+      <i class="fas fa-heart color-far icon-heart icon-slide"></i>
+      ...mark scholarships as favorites
+    </h5>
+    <% end %>
+  </div>
+
+  <div class="mySlides col-sm-12">
+    <%= link_to user_path(:id) do%>
+    <h5>
+      <i class="fas fa-bell icon-bell icon-slide"></i>
+      and set-up alerts, for not missing anything.
+    </h5>
+    <% end %>
+  </div>
 
 
-
-<div class="slideshow-container">
-
-<div class="mySlides">
-  <a href="#areas">
-  <h5>Search for scholarships by areas</h5>
-  <i class="fas fa-chevron-down icon-arrow"></i>
-  </a>
-</div>
-
-<div class="mySlides">
-  <%= link_to scholarships_path do%>
-  <h5>See all the scholarships available</h5>
-  <i class="fas fa-list icon-list"></i>
-  <% end %>
-</div>
-
-<div class="mySlides">
-  <%= link_to new_user_registration_path do %>
-  <h5>Create an account, so you can...</h5>
-  <i class="fas fa-check icon-check"></i>
-  <% end %>
-</div>
-
-<div class="mySlides">
-  <%= link_to scholarships_path do%>
-  <h5>...mark scholarships as favorites </h5>
-  <i class="fas fa-heart color-far icon-heart"></i>
-  <% end %>
-</div>
-
-<div class="mySlides">
-  <%= link_to user_path(:id) do%>
-  <h5>and set-up alerts, for not missing anything.</h5>
-  <i class="fas fa-bell icon-bell"></i>
-  <% end %>
-</div>
-
-
-<a class="prev">❮</a>
-<a class="next">❯</a>
+  <a class="prev">❮</a>
+  <a class="next">❯</a>
 </div>
 
 
