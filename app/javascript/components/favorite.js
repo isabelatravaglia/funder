@@ -6,6 +6,10 @@ const toggleIcons = function() {
   const toggleIcon = function(icon) {
     icon.classList.toggle('heart-fav');
     icon.classList.toggle('heart-fas');
+    icon.classList.toggle('fas');
+    icon.classList.toggle('color-fas');
+    icon.classList.toggle('far');
+    icon.classList.toggle('color-far');
   }
 
   icons.forEach((icon) => {
