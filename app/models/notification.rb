@@ -13,7 +13,7 @@ class Notification < ApplicationRecord
 
     alert_from_notification.notif_count = alert_from_notification.notifications.count
 
-    alert_from_notification.unread_notif_count = alert_from_notification.notifications.where(status: "unread").count
+    alert_from_notification.unread_notif_count = alert_from_notification.notifications.where(status: "unread").distinct.count(:scholarship_id)
 
     alert_from_notification.save
 
