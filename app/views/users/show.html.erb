@@ -10,13 +10,33 @@
 
         <%current_user.favorites.each do |favorite| %>
           <% scholarship = Scholarship.find(favorite.favorited_id) %>
-          <div class="card-product-profile">
+          <% if ((Date.today >= scholarship.application_start_date) and (Date.today < scholarship.application_end_date and scholarship.application_end_date - Date.today <= 15)) or ((Date.today <=  scholarship.application_start_date) and (scholarship.application_start_date - Date.today <= 60)) or ((Date.today >= scholarship.application_start_date) and (scholarship.application_end_date - Date.today > 15)) %>
+            <div class="card-product-profile card-product-profile-highlight">
+          <% elsif Date.today > scholarship.application_end_date %>
+            <div class="card-product-profile card-product-profile-lowlight">
+          <% else %>
+            <div class="card-product-profile">
+          <% end %>
 
             <%=image_tag scholarship.institution.photo_url %>
             <div class="card_product_infos">
               <h2><%= scholarship.name%></h2>
-              <p>Aplication starts: <%=scholarship.application_start_date%></p>
-              <p>Deadline: <%=scholarship.application_end_date %></p>
+              <% if  (Date.today <=  scholarship.application_start_date) and (scholarship.application_start_date - Date.today <= 60)%>
+                <p style="color:red;"><strong>Application starts soon! </strong></p>
+                <p>Application start: <%=scholarship.application_start_date%></p>
+              <% elsif (Date.today >= scholarship.application_start_date) and (scholarship.application_end_date - Date.today > 15) %>
+                <p style="color:red;"><strong>Application is now open!</strong></p>
+                <p>Deadline: <%=scholarship.application_end_date %></p>
+              <% elsif (Date.today >= scholarship.application_start_date) and (Date.today < scholarship.application_end_date and scholarship.application_end_date - Date.today <= 15)%>
+                  <p style="color:red;"><strong>Application ends soon!</strong></p>
+                  <p>Deadline: <%=scholarship.application_end_date %></p>
+              <% elsif Date.today > scholarship.application_end_date %>
+                <p style="color:red;"><strong>Application is now closed!</strong></p>
+                  <p>Deadline: <%=scholarship.application_end_date %></p>
+              <% else %>
+                <p>Application start: <%=scholarship.application_start_date%></p>
+                <p>Deadline: <%=scholarship.application_start_date%></p>
+              <% end %>
             </div>
 
             <div class="icon">
@@ -27,7 +47,6 @@
             <%= link_to '', scholarship_path(scholarship.id), class: 'card-profile-link' %>
           </div>
         <% end%>
-
       </div>
     </div>
   </div>
@@ -48,7 +67,11 @@
 
 
         <%@sorted_alerts.each do |alert|%>
-        <div class="card-product-profile">
+        <% if  alert.unread_notifications? %>
+          <div class="card-product-profile card-product-profile-highlight">
+        <% else %>
+          <div class="card-product-profile">
+        <% end %>
           <%if alert.institution.present?%>
             <%=image_tag alert.institution.photo_url %>
           <% else %>
