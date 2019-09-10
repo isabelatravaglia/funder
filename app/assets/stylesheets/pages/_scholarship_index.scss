@@ -1,21 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
 .index-page {
-  margin: 150px 12%;
+  margin: 0;
   background: #e7e4e4;
-  border-radius: 6px;
-  padding: 20px;
+  padding: 0;
   position: relative;
 }
 
+
 .index-page h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bold;
   color: #4d4d4d;
-  margin-left: 150px;
-  margin-top: 20px;
+  margin-left: 40px;
+  padding-top: 10px;
+}
 
+@include media-breakpoint-up(md) {
+  .index-page {
+    margin: 150px 12%;
+    background: #e7e4e4;
+    border-radius: 6px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .index-page h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin-left: 100px;
+    margin-top: 20px;
+  }
 }
 
 .index-page h6 {
