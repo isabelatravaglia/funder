@@ -4,6 +4,7 @@
   <div class="col-xs-8 col-sm-4">
 
     <div class="favorites">
+      <i class="fas fa-heart color-far icon-heart" id="icon-heart-fav"></i>
       <h1>My Favorites</h1>
       <div class="favorite">
 
@@ -13,13 +14,13 @@
           <div class="card-product-profile">
 
             <%=image_tag scholarship.institution.photo_url %>
-            <div class="card_product_infos">
+            <div class="card_product_profile_infos">
               <h2><%= scholarship.name%></h2>
               <p>Aplication starts: <%=scholarship.application_start_date%></p>
               <p>Deadline: <%=scholarship.application_end_date %></p>
             </div>
 
-            <div class="icon">
+            <div class="icon" id="icon-trash-fav">
               <%= link_to favorite_path(favorite), method: :delete do %>
                 <i class="fas fa-trash-alt"></i>
               <% end %>
@@ -35,12 +36,13 @@
   <div class="col-xs-8 col-sm-4">
 
     <div class="favorites">
+      <i class="fas fa-bell icon-bell" id="icon-bell-alerts"></i>
       <h1>My Alerts</h1>
       <div class="favorite">
 
         <div class="icon" id="icon-plus">
           <%= link_to '#newAlert', 'data-toggle' => "modal" do %>
-            <i class="fas fa-plus" ></i>
+            <i class="fas fa-plus"></i>
           <% end %>
         </div>
 
@@ -55,7 +57,7 @@
             <%= image_tag alert.area.photo_url %>
           <% end %>
 
-          <div class="card_product_infos">
+          <div class="card_product_profile_infos">
             <%if alert.institution.present? && alert.area.present? %>
               <h2><%= alert.area.name %></h2>
               <p><strong><%=alert.institution.name  %></strong></p>
@@ -92,16 +94,17 @@
   <div class="col-xs-8 col-sm-4">
 
     <div class="personal-info">
-      <h1>My Profile</h1>
+      <i class="far fa-user" id="user-icon"></i>
+      <h1>My Personal Info</h1>
       <div class="card-product1">
         <div class="card_product_infos">
           <ul>
-            <li><h5>Full Name: <%=@user.first_name%> <%=@user.last_name%> </h5></li>
-            <li> <h5>Your area of study: <%=@user.area%></h5></li>
-            <li> <h5>Nationality: <%=@user.nationality%></h5></li>
-            <li> <h5>Country: <%=@user.country%></h5></li>
-            <li> <h5>Date of birth: <%=@user.date_of_birth%></h5></li>
-            <li> <h5>Gender: <%=@user.gender%></h5></li>
+            <li><h5><strong>Name:</strong> <%=@user.first_name%> <%=@user.last_name%> </h5></li>
+            <li> <h5><strong>Area of study:</strong> <%=@user.area%></h5></li>
+            <li> <h5><strong>Nationality:</strong> <%=@user.nationality%></h5></li>
+            <li> <h5><strong>Country of residence:</strong> <%=@user.country%></h5></li>
+            <li> <h5><strong>Date of birth:</strong> <%=@user.date_of_birth%></h5></li>
+            <li> <h5><strong>Gender:</strong> <%=@user.gender%></h5></li>
           </ul>
         </div>
       </div>
