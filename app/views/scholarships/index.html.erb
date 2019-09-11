@@ -12,7 +12,7 @@
     <% if user_signed_in? %>
       <div class="row">
         <% @results.each do |result|%>
-        <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="col-sm-12 col-md-12 col-lg-6">
 
           <div class="card-product list-cards">
 
@@ -22,8 +22,8 @@
              <%= icon(current_user.likes?(result) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
             <h2><%= result.name %></h2>
             <h4><%= result.institution.name %></h4>
-            <h4><%= result.institution.country %></h4>
-            <p><%= truncate(result.description, length: 80) %></p>
+            <h5><%= result.institution.country %></h5>
+            <p><%= truncate(result.description, length: 60) %></p>
           </div>
           <%= link_to '', result, class: 'card-link' %>
         </div>
@@ -40,7 +40,7 @@
 
     <div class="row">
       <% @results.each do |result|%>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-sm-12 col-md-12 col-lg-6">
 
         <div class="card-product list-cards">
           <%= image_tag result.institution.photo_url %>
