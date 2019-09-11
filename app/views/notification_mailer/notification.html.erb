@@ -1,0 +1,14 @@
+<p>Hi <%= @user.first_name %>,</p>
+
+<p>You have a new scholarship notification!</p>
+
+<p><strong><%= @new_notification.scholarship.name %></strong></p>
+<p><strong>Area:</strong> <%= @new_notification.scholarship.area.name %></p>
+<p><strong>Institution:</strong> <%= @new_notification.scholarship.institution.name %></p>
+<p><strong>Description:</strong> <%= @new_notification.scholarship.description %></p>
+
+<p>Check your profile page on <a href="http://www.funder-app.site/">Funder</a> for more details!</p>
+
+<p>Cheers!</p>
+
+<p>The Funder Team</p>
