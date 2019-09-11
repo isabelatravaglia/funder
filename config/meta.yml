@@ -1,6 +1,5 @@
 meta_product_name: "Funder"
 meta_title: "Funder - your funding finder"
 meta_description: "Funder helps higher-education students and researchers find a scholarship or funding program to pursue their studies and researches."
-meta_image: "LogoFunder.png" # should exist in `app/assets/images/`
-meta_type: "website"
+meta_image: "banner_w1200_h630.jpg"
 meta_url: "funder-app.site"
