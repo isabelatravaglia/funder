@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
-.all-navbar {
-  position: relative;
+
+
+.dropdown-item {
+  font-size: 9px;
 }
+
+@include media-breakpoint-up(sm)
 
 .search-form {
   position: absolute;
   left: 50px;
+  top: 10px;
 }
 
 .navbar-lewagon {
   justify-content: space-between;
   background: #ffd1b3;
+  position: relative;
 }
 
 .navbar-lewagon .navbar-collapse {

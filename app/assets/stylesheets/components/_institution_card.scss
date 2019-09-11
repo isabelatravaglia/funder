@@ -140,7 +140,7 @@
 
 .btn-back {
   width: 90%;
-  margin-bottom: 100px;
+
 
 }
 
@@ -268,10 +268,10 @@
 
 
 .description {
-  margin: 50px 10px;
+  margin: 70px 30px;
   text-align: justify;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: lighter;
 
 }
@@ -293,7 +293,7 @@
 }
 
 
-.estrela ul {
+.star ul {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
@@ -302,8 +302,23 @@
 
 }
 
-.estrela ul li {
+.star ul li {
   display: inline;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: lighter;
+  color: #4d4d4d;
+  opacity: 0.7;
 
+}
+
+#star-icon {
+  font-size: 18px;
+  color: #f8a978;
+}
+
+#ranking-number {
+  font-size: 16px;
+  font-weight: bold;
 }
 

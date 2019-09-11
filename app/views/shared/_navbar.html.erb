@@ -1,29 +1,18 @@
 
 <div class="all-navbar">
-
-
-
   <div class="<%= navbar_classes %>">
-
-
-
       <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "https://res.cloudinary.com/ddec9kvgc/image/upload/v1567530182/logo_funder/logo_funder_badge_b7pgdp.png" %>
       <% end %>
 
+        <%= render 'shared/search_form' %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-
-
-      <%= render 'shared/search_form' %>
-
-
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto float-right">
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Profile", user_path(current_user)%>
@@ -50,13 +39,13 @@
             </li>
           <% end %>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown d-sm-block">
+
             <% if current_user.photo? %>
             <%= cl_image_tag current_user.photo , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
             <%= image_tag 'blank-avatar.png'  , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
-
 
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
