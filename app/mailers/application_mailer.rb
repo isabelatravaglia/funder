@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'admin@funder-app.site'
+  default from: ' "The Funder Team" <admin@funder-app.site>'
   layout 'mailer'
 end
