@@ -23,7 +23,7 @@ class Notification < ApplicationRecord
 
   def send_notification_email
     puts "Preparing to send notification email"
-    user = User.first
+    user = self.alert.user
     new_notification = self
     NotificationMailer.with(user: user, new_notification: new_notification).notification.deliver_now
     puts "Notification email sent to #{user.email}."
