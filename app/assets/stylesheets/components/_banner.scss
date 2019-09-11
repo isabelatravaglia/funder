@@ -86,9 +86,24 @@
 
 
 .full-logo {
-  height: 90px;
+  height: 95px;
   width: 200px;
   position: absolute;
-  top: 15px;
+  top: 20px;
   left: 50px;
+}
+
+
+@media all and (max-width: 690px) {
+
+  .full-logo {
+  height: 70px;
+  width: 165px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+
+
+
 }

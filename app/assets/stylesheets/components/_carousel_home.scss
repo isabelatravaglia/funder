@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+// CSS for the sentence Caroussel
+
+* {box-sizing: border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background-color: #e7e4e4;
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 50px;
+  border-radius: 6px;
+
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  position: relative;
+  padding: 80px;
+  text-align: center;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.mySlides a {
+  text-decoration: none;
+}
+
+
+.mySlides h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  color: #4d4d4d;
+  font-weight: lighter;
+}
+
+.mySlides .icon-slide {
+  color: #f8a978;
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+.mySlides .icon-arrow {
+  font-size: 25px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #4d4d4d;
+  font-weight: bold;
+  font-size: 10px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0, 0.1);
+  color: #f8a978 !important;
+}
+
+@include media-breakpoint-up(md) {
+  .slideshow-container {
+  position: relative;
+  background-color: #e7e4e4;
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 50px;
+  border-radius: 6px;
+
+}
+
+.mySlides h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  color: #4d4d4d;
+  font-weight: lighter;
+}
+
+.mySlides .icon-slide {
+  color: #f8a978;
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.mySlides .icon-arrow {
+  font-size: 30px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #4d4d4d;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0, 0.1);
+  color: #f8a978 !important;
+}
+
+}
+
+@include media-breakpoint-up(sm) {
+  .slideshow-container {
+  position: relative;
+  background-color: #e7e4e4;
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 50px;
+  border-radius: 6px;
+
+}
+.mySlides h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  color: #4d4d4d;
+  font-weight: lighter;
+}
+
+.mySlides .icon-slide {
+  color: #f8a978;
+  font-weight: bold;
+  font-size: 35px;
+  margin-right: 20px;
+}
+
+.mySlides .icon-arrow {
+  font-size: 35px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #4d4d4d;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0, 0.1);
+  color: #f8a978 !important;
+}
+
+
+}
+
+
+
