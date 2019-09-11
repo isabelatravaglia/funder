@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
     <!-- <link href="lib/noty.css" rel="stylesheet"> -->
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
       <%= render 'shared/navbar' %>
