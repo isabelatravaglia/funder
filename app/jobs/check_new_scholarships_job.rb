@@ -5,9 +5,9 @@ class CheckNewScholarshipsJob < ApplicationJob
     # Do something later
     puts "checking if new scholarship corresponds to alerts"
     @scholarship = Scholarship.find(scholarship_id)
-    puts "SCHOLAR:    #{@scholarship}"
+    puts "scholarship:    #{@scholarship}"
     @alerts = alert_check(@scholarship)
-    puts "ALERTSSS:    #{@alerts.count}"
+    puts "alerts:    #{@alerts.count}"
 
     unless @alerts.empty?
       puts "alert match!"
@@ -32,7 +32,6 @@ class CheckNewScholarshipsJob < ApplicationJob
 
   def alert_check(scholarship)
     puts "INSIDE CHECK ALERT, scholar.area_id: #{scholarship.area_id} scholar.institution_id: #{@scholarship.institution_id}}"
-
     Alert.where("(area_id = #{scholarship.area_id} and institution_id = #{scholarship.institution_id}) or (area_id = #{scholarship.area_id} and institution_id is null) or (area_id is null and institution_id = #{@scholarship.institution_id})")
   end
 end
