@@ -1,5 +1,3 @@
-
-
 <div class="row ">
   <div class="col-sm-12 col-md-12 col-lg-12">
     <div class="show-card">
@@ -12,65 +10,50 @@
         <%#= image_tag @scholarship.institution.photo_url %>
 
         <div class="show-card-text">
-
-          <div class="infos-name">
+          <div class="infos-name star">
             <h2><%= @scholarship.name %></h2>
             <h3><%= @scholarship.institution.name %></h3>
+
+            <ul>
+              <li id="star-icon"><i class="fas fa-star"></i></li>
+              <li id="ranking-number"><%=@scholarship.institution.ranking%></li>
+              <li id="ranking-text">Ranking in Europe (THE)</li>
+            </ul>
+
             <h4><%= @scholarship.institution.country %></h4>
             <h4><%= @scholarship.area.name %></h4>
-            
 
+            <div class="application">
+              <ul>
+                <li><i class="far fa-calendar-alt"></i></li>
+                <li>Application: <%= @scholarship.application_start_date %> / <%= @scholarship.application_end_date %></li>
+              </ul>
+            </div>
           </div>
-
-      <div class="infos-name estrela">
-
-          <h2><%= @scholarship.name %></h2>
-          <h3><%= @scholarship.institution.name %></h3>
-        <ul>
-          <li><i class="far fa-star"></i></li>
-          <li><%=@scholarship.institution.ranking%> Ranking in Europe (THE)</li>
-        </ul>
-        <h4><%= @scholarship.institution.country %></h4>
-        <h4><%= @scholarship.area.name %></h4>
-
-
-        <div class="application">
-          <ul>
-            <li><i class="far fa-calendar-alt"></i></li>
-            <li>Application: <%= @scholarship.application_start_date %> / <%= @scholarship.application_end_date %></li>
-          </ul>
-        </div>
-
 
           <div class="description">
-
             <p><%= @scholarship.description %></p>
-
           </div>
 
-        </div>
+          <div class="btn-info">
+          <%= link_to "More information", @scholarship.url, class: 'btn btn-warning', target: :_blank %>
+          </div>
 
-        <div class="btn-info">
-        <%= link_to "More information", @scholarship.url, class: 'btn btn-warning', target: :_blank %>
-        </div>
-
-
-
-        <div id='<%= @scholarship.id %>' class="heart-icon" >
-          <% if user_signed_in? %>
-            <%= icon(current_user.likes?(@scholarship) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
-          <% else %>
-           <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
-              <i class="far fa-heart color-far"></i>
+          <div id='<%= @scholarship.id %>' class="heart-icon" >
+            <% if user_signed_in? %>
+              <%= icon(current_user.likes?(@scholarship) ? "fas color-fas heart-fas" : "far color-far heart-fav" , "heart") %>
+            <% else %>
+             <%= link_to new_user_session_path, alert: "You need to Login to continue :)" do %>
+                <i class="far fa-heart color-far"></i>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
 
       <div class="btn-back">
-          <%= link_to "Back to Scholarships", scholarships_path, class: 'btn btn-outline-warning'%>
+        <%= link_to "Back to Scholarships", scholarships_path, class: 'btn btn-outline-warning'%>
       </div>
-
     </div>
   </div>
 </div>
