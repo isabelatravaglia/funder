@@ -12,11 +12,17 @@
 
     <div class="show-card-text">
 
-      <div class="infos-name">
-        <h2><%= @scholarship.name %></h2>
-        <h3><%= @scholarship.institution.name %></h3>
+      <div class="infos-name estrela">
+
+          <h2><%= @scholarship.name %></h2>
+          <h3><%= @scholarship.institution.name %></h3>
+        <ul>
+          <li><i class="far fa-star"></i></li>
+          <li><%=@scholarship.institution.ranking%> Ranking in Europe (THE)</li>
+        </ul>
         <h4><%= @scholarship.institution.country %></h4>
         <h4><%= @scholarship.area.name %></h4>
+
 
         <div class="application">
           <ul>
