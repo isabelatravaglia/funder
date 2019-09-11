@@ -38,8 +38,8 @@ inst_4 = Institution.new(name: "Oslo University College", city: "Oslo", country:
 inst_4.remote_photo_url = url_4
 inst_4.save
 
-url_5 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503702/institutions/wide_fullhd_russia-moscow-lomonosov-msu_vhj3kk.jpg"
-inst_5 = Institution.new(name: "ETH Zurich", city: "Zurich", country: "Switzerland", ranking: rand(1..50), user: admin )
+url_5 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568199546/Funder/university-of-basel_owmycl.jpg"
+inst_5 = Institution.new(name: "University of Basel", city: "Basel", country: "Switzerland", ranking: rand(1..50), user: admin )
 inst_5.remote_photo_url = url_5
 inst_5.save
 
