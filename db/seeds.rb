@@ -229,3 +229,11 @@ Scholarship.all.each do |scholarship|
   scholarship.save
 end
 
+puts "Unfavorating unread notifications"
+Notification.all.each do |n|
+  if n.status == "unread"
+    f = Favorite.find_by(favorited_id: n.scholarship.id, user_id: n.alert.user_id)
+    f.delete if !f.nil?
+    puts "deleting favorite for scholarship_id #{n.scholarship.id} and user_id #{n.alert.user_id}"
+  end
+end
