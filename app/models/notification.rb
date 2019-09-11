@@ -4,6 +4,7 @@ class Notification < ApplicationRecord
   validates :status, presence: true
 
   after_save :add_count
+  after_save :send_notification_email
   after_update :add_count
   def add_count
     puts "adding count"
@@ -18,5 +19,13 @@ class Notification < ApplicationRecord
     alert_from_notification.save
 
     puts "added #{alert_from_notification.notifications.count} notification on alert #{self.alert.id}. Alert notifications were #{alert_from_notification.notif_count}"
+  end
+
+  def send_notification_email
+    puts "Preparing to send notification email"
+    user = self.alert.user
+    new_notification = self
+    NotificationMailer.with(user: user, new_notification: new_notification).notification.deliver_now
+    puts "Notification email sent to #{user.email}."
   end
 end
