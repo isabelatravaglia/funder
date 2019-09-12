@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
 
-
 .dropdown-item {
   font-size: 7px;
   font-family: "Roboto", sans-serif;
   color: #737373;
   opacity: 0.7;
+  padding: 0px;
 }
 
-@include media-breakpoint-up(sm)
+.banner-item .dropdown-item {
+    color: white;
+}
+
+.dropdown-menu {
+
+  background-color: transparent;
+  border: none;
+}
+
 
 .search-form {
   position: absolute;
@@ -51,12 +60,12 @@
 .navbar-nav {
   align-items: center;
   .color-far-bell {
-  color: #f8a978
-}
+    color: #f8a978
+  }
 
-.color-fas-bell {
-  color: #f8a978
-}
+  .color-fas-bell {
+    color: #f8a978
+  }
 }
 
 .nav-item {
@@ -69,6 +78,26 @@
   font-family: "Roboto", sans-serif;
   color: #737373;
   opacity: 0.7;
+}
+
+@include media-breakpoint-up(sm) {
+
+  .dropdown-menu {
+
+    background-color: white;
+    opacity: 0.8;
+    border: none;
+  }
+
+  .banner-item .dropdown-item {
+    color: #737373;
+
+}
+
+.dropdown-item {
+ padding-left: 20px;
+}
+
 }
 
 
