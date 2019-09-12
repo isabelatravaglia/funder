@@ -1,3 +1,34 @@
+
+
+.search-form {
+  width: 200px;
+  margin-left: 10px;
+  #query{
+    width: 150px;
+    }
+
+  }
+
+
+
+
+.search-button {
+  background-color: transparent;
+  border-color: transparent ;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+
+
+}
+
+.icon-search{
+  padding-top: 8px;
+}
+
+
+
+
+
 @include media-breakpoint-up(md) {
 
 

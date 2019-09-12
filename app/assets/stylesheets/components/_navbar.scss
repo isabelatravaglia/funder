@@ -3,7 +3,10 @@
 
 
 .dropdown-item {
-  font-size: 9px;
+  font-size: 7px;
+  font-family: "Roboto", sans-serif;
+  color: #737373;
+  opacity: 0.7;
 }
 
 @include media-breakpoint-up(sm)
@@ -59,6 +62,13 @@
 .nav-item {
   margin-right: 12px;
 
+}
+
+.dropdown-item {
+  font-size: 13px;
+  font-family: "Roboto", sans-serif;
+  color: #737373;
+  opacity: 0.7;
 }
 
 
