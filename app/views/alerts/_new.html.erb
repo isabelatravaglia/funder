@@ -6,17 +6,17 @@
      <div class="container mb-4">
       <div class="row justify-content-center modal-alert">
 
-          <h2>New Alert</h2>
-          <%= simple_form_for alert do |f| %>
 
           <div class="form-inputs">
+          <h2>New Alert</h2>
+          <%= simple_form_for alert do |f| %>
             <%= f.input :name %>
             <%= f.input :description, as: :text %>
             <%= f.input :area_id, collection: Area.order(:name) %>
             <%= f.input :institution_id, collection: Institution.order(:name) %>
             <%= f.button :submit, "submit", class: "btn btn-warning"%>
-          </div>
           <% end %>
+          </div>
 
       </div>
     </div>
