@@ -18,22 +18,22 @@ admin.save
 
 puts "Creating institutions"
 
-url_1 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503775/institutions/university_of_toronto_1_1_b3shsz.jpg"
+url_1 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568286757/institutions/University-of-Vienna_ypkznw.jpg"
 inst_1 = Institution.new(name: "University of Vienna", city: "Vienna", country: "Austria", ranking: 63, user: admin )
 inst_1.remote_photo_url = url_1
 inst_1.save
 
-url_2 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503756/institutions/190426-ucla-measles-se-610p_2af8c7a37d7e423cacf6805c7cbc08f0.fit-760w_trohil.jpg"
+url_2 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568286454/institutions/University-of-Debrecen_swc7ag.jpg"
 inst_2 = Institution.new(name: "University of Debrecen", city: "Budapeste", country: "Hungary", ranking: 361, user: admin )
 inst_2.remote_photo_url = url_2
 inst_2.save
 
-url_3 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503736/institutions/FN-AI051_fn_uni_M_20190830130204_uceqnf.jpg"
+url_3 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568286255/institutions/University-of-Porto_lizhno.jpg"
 inst_3 = Institution.new(name: "University of Porto", city: "Porto", country: "Portugal", ranking: 197, user: admin )
 inst_3.remote_photo_url = url_3
 inst_3.save
 
-url_4 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503719/institutions/0943b1554aafbb45a7f771d4a04cd34d02eb6b21cb7e469c73cc22dc8561dcd1_hgjvmv.jpg"
+url_4 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568285946/institutions/Oslo-University-College_fkbjy6.jpg"
 inst_4 = Institution.new(name: "Oslo University College", city: "Oslo", country: "Norway", ranking: 49, user: admin )
 inst_4.remote_photo_url = url_4
 inst_4.save
@@ -44,28 +44,28 @@ inst_5 = Institution.new(name: "University of Basel", city: "Basel", country: "S
 inst_5.remote_photo_url = url_5
 inst_5.save
 
-url_6 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503687/institutions/456071_7283734_universities_updates_jwpfmu.jpg"
+url_6 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568285712/institutions/University-of-Copenhagen_rbfl71.jpg"
 inst_6 = Institution.new(name: "University of Copenhagen", city: "Copenhagen", country: "Denmark", ranking: 44, user: admin )
 inst_6.remote_photo_url = url_6
 inst_6.save
 
-url_7 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503674/institutions/national-university-of-ireland-galway-aula-maxima-quadrangle_z7a6ed.jpg"
+url_7 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568285538/institutions/university-of-warsaw_vzh1zp.jpg"
 inst_7 = Institution.new(name: "University of Warsaw", city: "Warsaw", country: "Poland", ranking: 286, user: admin )
 inst_7.remote_photo_url = url_7
 inst_7.save
 
 
-url_8 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503662/institutions/colleges-universities-using-social-media_xwyat7.jpg"
+url_8 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568285308/institutions/trinity-college_xwidwx.jpg"
 inst_8 = Institution.new(name: "Trinity College", city: "Dublin", country: "Ireland", ranking: 48, user: admin )
 inst_8.remote_photo_url = url_8
 inst_8.save
 
-url_9 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503653/institutions/https_3A_2F_2Fspecials-images.forbesimg.com_2Fdam_2Fimageserve_2F503064668_2F960x0_ehgvem.jpg"
+url_9 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568285054/institutions/university-of-lisbon_zksr1u.jpg"
 inst_9 = Institution.new(name: "University of Lisbon", city: "Lisbon", country: "Portugal", ranking: 251, user: admin )
 inst_9.remote_photo_url = url_9
 inst_9.save
 
-url_10 = "https://res.cloudinary.com/veronicabraga/image/upload/v1567503647/institutions/Corpus-Christi-Oxford_u8ztdh.jpg"
+url_10 = "https://res.cloudinary.com/veronicabraga/image/upload/v1568284848/institutions/university-of-ghent_siqad3.jpg"
 inst_10 = Institution.new(name: "University of Ghent", city: "Ghent", country: "Belgium", ranking: 63, user: admin )
 inst_10.remote_photo_url = url_10
 inst_10.save
