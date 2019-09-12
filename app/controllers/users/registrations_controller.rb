@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = current_user
 
     if @user.update_attributes(user_params)
-      redirect_to root_path, notice: "Your Perfil is Updated"
+      redirect_to root_path, notice: "Your profile is updated"
     else
       render :edit
     end
