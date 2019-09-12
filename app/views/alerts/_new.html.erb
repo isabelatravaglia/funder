@@ -8,13 +8,13 @@
 
 
           <div class="form-inputs">
-          <h2>New Alert</h2>
+          <h3>New Alert</h3>
           <%= simple_form_for alert do |f| %>
             <%= f.input :name %>
             <%= f.input :description, as: :text %>
             <%= f.input :area_id, collection: Area.order(:name) %>
             <%= f.input :institution_id, collection: Institution.order(:name) %>
-            <%= f.button :submit, "submit", class: "btn btn-warning"%>
+            <%= f.button :submit, "Submit", class: "btn btn-warning"%>
           <% end %>
           </div>
 
