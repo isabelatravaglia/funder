@@ -1,11 +1,12 @@
 
 
 .search-form {
-  width: 200px;
+  width: 150px;
   margin-left: 10px;
-  #query{
-    width: 150px;
-    font-size: 12px;
+  margin-top: 6px;
+  #query {
+    width: 110px;
+    font-size: 10px;
     }
 
   }
@@ -19,13 +20,13 @@
   background-color: transparent;
   border-color: transparent ;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 20px;
+  font-size: 16px;
 
 
 }
 
 .icon-search{
-  padding-top: 8px;
+  margin-top: 6px;
 }
 
 
@@ -38,15 +39,14 @@
 .search-form {
   width: 500px;
   margin-left: 15px;
+  margin-top: 4px;
   #query{
     width: 250px;
+    font-size: 15px;
     }
 
   }
-}
-// .form-control:focus {
-//   color: #ffd1b3;
-// }
+
 
 
 .search-button {
@@ -60,8 +60,9 @@
 }
 
 .icon-search{
-  padding-top: 8px;
+  margin-top: 8px;
 }
 
-// #E67E22
+}
+
 

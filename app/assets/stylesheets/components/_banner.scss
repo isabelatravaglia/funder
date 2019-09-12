@@ -106,7 +106,27 @@
   width: 117px;
   position: absolute;
   top: 23px;
-  left: 20px;
+  left: 10px;
+}
+
+.login-banner {
+ position: absolute;
+ top: 30px;
+ right: 20px;
+ list-style-type: none;
+ text-decoration: none;
+ font-size: 4px;
+
+}
+
+.sign-up-banner {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  list-style-type: none;
+  text-decoration: none;
+  font-size: 4px;
+
 }
 
 
