@@ -28,15 +28,18 @@ text-decoration: none;
 
 #icon-pencil {
   right: 0.5px;
+  font-size: 10px;
 }
 
 #icon-trash {
   right: 18px;
+  font-size: 10px;
 }
 
 #icon-trash-fav {
 
   right: 0.5px;
+  font-size: 10px;
 }
 
 #icon-pencil-profile {
@@ -99,13 +102,12 @@ text-decoration: none;
 }
 
 .card-product-profile h2 {
-  font-size: 12px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product-profile p {
-  font-size: 10px;
+  font-size: 8px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -120,8 +122,10 @@ text-decoration: none;
 }
 
 .card-product-profile .card_product_profile_infos h2 {
-  padding-right:18px;
-  margin-right: 18;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  opacity: 0.7;
 }
 
 .card-product-profile .card_product_infos a {
@@ -236,12 +240,15 @@ text-decoration: none;
 
 #icon-pencil {
  right: 5px;
+ font-size: 15px;
 }
 #icon-trash {
  right: 27px;
+ font-size: 15px;
 }
 #icon-trash-fav {
  right: 8px;
+ font-size: 15px;
 }
 #icon-pencil-profile {
  right: 30px;
@@ -335,6 +342,11 @@ text-decoration: none;
 .card-product-profile .card_product_profile_infos h2 {
 
   padding-right: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #4d4d4d;
 
 }
 
